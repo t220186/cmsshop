@@ -7,6 +7,10 @@ namespace Cms.Areas.Admin.Controllers
         // GET: Admin/Dashboard
         public ActionResult Index()
         {
+            ViewBag.Title = "Panel administracyjny";
+            return View();
+        }
+        public ActionResult Add() {
             return View();
         }
     }
