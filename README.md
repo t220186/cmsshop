@@ -1,2 +1,10 @@
 # cmsshop
-netcore cms shop - sklep ala bellodecor - funkcjonalnosci takie same ale inny wygląd - asortyment tylko dekoracyjny 
+asp net mvc -  cms shop - sklep z art. wnętrzarskim - funkcjonalnosci  - asortyment tylko dekoracyjny 
+funkcjonalnosci:
+
+koszyk
+wyszukiwarka towarów
+epłatności
+
+
+
