@@ -1,6 +1,5 @@
 ﻿using Cms.Models.Data;
 using Cms.Models.ViewModels.Pages;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -29,7 +28,8 @@ namespace Cms.Areas.Admin.Controllers
         }
         //GET: Admin/Pages/Add
         [HttpGet]
-        public ActionResult AddPage() {
+        public ActionResult AddPage()
+        {
             //tytuł.
             ViewBag.Title = "Dodaj stronę";
 
@@ -40,7 +40,10 @@ namespace Cms.Areas.Admin.Controllers
         {
             //checkedModelState
             if (!ModelState.IsValid)
+            {
                 return View(model);
+            }
+
             using (Db db = new Db())
             {
                 string slug;
@@ -90,19 +93,105 @@ namespace Cms.Areas.Admin.Controllers
 
         //details Page 
         [HttpGet]
-        public ActionResult Details() {
-
-            return View();
-        }
-
-        public ActionResult Edit()
+        public ActionResult Details(int id)
         {
+            //action title
+            ViewBag.Title = "Szczegóły strony";
+            //Model
+            PageViewModel model;
+            //using
 
-            return View();
+            using (Db db = new Db())
+            {
+                //set pageDTo
+                PageDTO dTO = db.Pages.Find(id);
+                if (dTO == null)
+                {
+                    return Content("Strona nie istnieje");
+                }
+                else
+                {
+                    model = new PageViewModel(dTO);
+                }
+            }
+            //
+            return View(model);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            //Declarete PageView Model
+
+            PageViewModel model;
+
+            //Get db Context
+            using (Db db = new Db())
+            {
+                //set PageDTO
+                PageDTO dTO = db.Pages.Find(id);
+                if (dTO == null)
+                {
+                    return Content("Strona nie istnieje");
+
+                }
+                else
+                {
+                    model = new PageViewModel(dTO);
+                }
+            }
+
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Edit(PageViewModel model)
+        {
+            int id = model.Id;
+            //checkedModelState
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            using (Db db = new Db())
+            {
+                //start Using
+                PageDTO dTO = db.Pages.Find(id);
+                //init slug
+                string slug = "home";
+
+                //get page to edit 
+                dTO.Title = model.Title;
+                if (model.Slug != "home")
+                {
+
+                    if (string.IsNullOrWhiteSpace(model.Slug)) { slug = model.Title.Replace(" ", "-").ToLower(); } else { slug = model.Slug.Replace(" ", "-").ToLower(); }
+                    dTO.Slug = slug;
+                }
+                //check page to prevent duplicate title or (Adress)Slug
+                if (db.Pages.Where(x => x.Id != id).Any(x => x.Title == model.Title) || db.Pages.Where(x => x.Id != id).Any(x => x.Slug == slug))
+                {
+                    ModelState.AddModelError("", "Strona lub tytuł już istnieje");
+                }
+
+                dTO.Slug = slug;
+                dTO.Body = model.Body;
+                dTO.HasSidebar = model.HasSidebar;
+                dTO.Sorting = model.Sorting;
+
+                //update  //save
+                db.SaveChanges();
+
+
+                //end Using
+            }
+
+            TempData["Sm"] = "Strona została zaktualizowana";
+            return RedirectToAction("Index");
         }
 
 
-        public ActionResult Delete() {
+        public ActionResult Delete(int id)
+        {
 
             return View();
         }

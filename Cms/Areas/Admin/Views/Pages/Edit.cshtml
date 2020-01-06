@@ -1,17 +1,15 @@
 ﻿@model Cms.Models.ViewModels.Pages.PageViewModel
 
-@{
-    ViewBag.Title = "Edit";
-}
 
-<h2>Edycja Strony</h2>
+
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>PageViewModel</h4>
+        <h4>Strona @Html.LabelFor(model => model.Title)</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
@@ -27,7 +25,15 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Slug, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Slug, new { htmlAttributes = new { @class = "form-control" } })
+                @if (Model.Slug == "home")
+                {
+                    @Html.EditorFor(model => model.Slug, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                }
+                else
+                {
+                    @Html.EditorFor(model => model.Slug, new { htmlAttributes = new { @class = "form-control" } })
+                }
+
                 @Html.ValidationMessageFor(model => model.Slug, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -60,12 +66,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Zapisz" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Wróć do listy", "Index")
 </div>

@@ -5,6 +5,13 @@
     @Html.ActionLink("Dodaj nową stronę", "AddPage")
 </p>
 
+@if (TempData["SM"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SM"]
+    </div>
+}
+
 @if (!Model.Any())
 {
     <h3 class="text-center"> Brak stron  - chcesz dodać nową?</h3>
@@ -28,25 +35,23 @@
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Slug)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sorting)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HasSidebar)
-        </td>
-        <td>
-            @Html.ActionLink("Edytuj stronę", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Szczegóły", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Usuń", "Delete", new { id = item.Id })
-        </td>
-    </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Slug)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.HasSidebar)
+            </td>
+            <td>
+                @Html.ActionLink("Edytuj stronę", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Szczegóły", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Usuń", "Delete", new { id = item.Id })
+            </td>
+        </tr>
     }
 
 </table>
