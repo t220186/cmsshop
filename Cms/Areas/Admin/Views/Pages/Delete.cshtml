@@ -1,0 +1,62 @@
+﻿@model Cms.Models.ViewModels.Pages.PageViewModel
+
+
+
+<h2>@ViewBag.Title</h2>
+
+<h3>Czy na pewno chcesz usunąć stronę?</h3>
+<div>
+    <h4>Wybrana strona</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Slug)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Slug)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Body)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Body)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sorting)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sorting)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasSidebar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasSidebar)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Wróć do listy", "Index")
+        </div>
+    }
+</div>
