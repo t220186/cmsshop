@@ -192,10 +192,105 @@ namespace Cms.Areas.Admin.Controllers
 
         public ActionResult Delete(int id)
         {
+            ViewBag.Title = "Usuń stronę";
+            PageViewModel model;
 
+            //using
+            using (Db db = new Db())
+            {
+                PageDTO dTO = db.Pages.Find(id);
+                if (dTO == null)
+                {
+                    return Content("Strona nie istnieje");
+
+                }
+                else
+                {
+                    model = new PageViewModel(dTO);
+                }
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(PageViewModel model)
+        {
+            //model
+            int id = model.Id;
+            //using 
+            using (Db db = new Db())
+            {
+                PageDTO dTO = db.Pages.Find(id);
+                if (dTO.Slug == "home")
+                {
+                    TempData["Sm"] = "Strona" + model.Title + " nie została usunięta ze względu na to że jest to strona Domowa";
+                    return RedirectToAction("Index");
+                }
+
+
+                db.Pages.Remove(dTO);
+                db.SaveChanges();
+            }
+
+            TempData["Sm"] = "Strona" + model.Title + " została Usunięta";
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult SortPages(int[] id) {
+
+            int count = 1;
+            using (Db db = new Db())
+            {
+                PageDTO dTO;
+                //sort pages 
+
+                foreach(var item in id ){
+                    dTO = db.Pages.Find(item);
+                    dTO.Sorting = count;
+                    db.SaveChanges();
+                    count++;
+                }
+
+            }
             return View();
         }
 
+        //Edit SideBar 
+        public ActionResult EditSidebar() {
+            ViewBag.Title = "Edycja paska bocznego";
+
+            //get view model - sidebar
+            SideBarViewModel model;
+
+            //using
+            using (Db db = new Db())
+            {
+                //get Context
+                SideBarDTO dTO = db.SideBar.Find(1);
+                model = new SideBarViewModel(dTO);
+            }
+
+                return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult EditSideBar(SideBarViewModel model)
+        {
+            int id = model.Id;
+
+            //using context 
+            using (Db db = new Db()) {
+                //sidebar context dto
+                SideBarDTO dTO = db.SideBar.Find(id);
+                //get model Data
+                dTO.Body = model.Body;
+                db.SaveChanges();
+            }
+            TempData["Sm"] = "SideBar został zaktualizowany.";
+            return RedirectToAction("Index");
+        }
 
     }
 }
