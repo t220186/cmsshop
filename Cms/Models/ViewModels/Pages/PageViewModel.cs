@@ -1,5 +1,6 @@
 ﻿using Cms.Models.Data;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace Cms.Models.ViewModels.Pages
 {
@@ -28,6 +29,7 @@ namespace Cms.Models.ViewModels.Pages
         [Display(Name = "Adres (indywidualny) strony")]
         public string Slug { get; set; }
         [Required]
+        [AllowHtml]
         [StringLength(int.MaxValue, MinimumLength = 3)]
         [Display(Name = "Treść strony")]
         public string Body { get; set; }

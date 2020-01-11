@@ -1,0 +1,883 @@
+<fotobook externalProjectId="" version="3.0" totalpages="59" projectID="babcbca6-c8a2-418f-89b5-ed650642805c" compatibilityVersion="6002002" identifier="5ee28d89-7c66-4f87-a9e2-c2c359c55036" productname="ALB16" createdWithHPSVersionBuild="20181127" programversion="6003007" programversionBuild="20181127" imagedir="Ziomowisko_mcf-Dateien" createdWithHPSVersion="6003007" normalpages="54" productparameter="" isDataMcf="0" productvariant="pages:54" productvariant_visiblename="" startdatecalendarium="" projectIDCreatedEpoch="1550054845" pagenaming="1" useSpineLogo="1" savetime="2019-02-13 15:57">
+ <pagenumbering fontbold="0" textstring="%" format="0" verticalMargin="40" position="0" fontsize="24" fontitalics="0" bgcolor="#00000000" margin="93" fontfamily="Calibri" textcolor="#ff000000">
+  <outline enabled="0" width="1"/>
+ </pagenumbering>
+ <extra>
+  <lastTextFormat font="Futura Bk BT,34,-1,5,75,0,0,0,0,0" hasOutline="1" outlineWidth="2" foregroundColor="#ffffffff" VerticalIndentMargin="0" backgroundColor="#00000000" outlineColor="4294506744" IndentMargin="0" Alignment="ALIGNHCENTER"/>
+ </extra>
+ <page rotation="0" designStyleID="125115" type="fullcover" pagenr="0">
+  <bundlesize height="2050" width="4141"/>
+  <designElementIDs background="201" layout="124978"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="4"/>
+  <background templatename="collage_cover_back_quad,normal" layout="1"/>
+  <area rotation="270" left="1095" top="999" height="51" zposition="1" alpha="1" areatype="textarea" width="1950" isResizable="0">
+   <border enabled="0" color="#ff000000" position="outside" width="2" applySpotColor="0"/>
+   <text isSpineText="1" areaTextType="content" applySpotColor="0"><![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><html><head><meta name="qrichtext" content="1" /><style type="text/css">p, li { white-space: pre-wrap; }</style></head><body style=" font-family:'FranklinGothic'; font-size:7pt; font-weight:400; font-style:normal;"><table style="-qt-table-type: root; margin-top:10px; margin-bottom:0px; margin-left:0px; margin-right:0px;"><tr><td style="border: none;"><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt; color:#000000;">szczyrk_2018_sonecko-gorkowski</span></p></td></tr></table></body></html>]]><outline enabled="0" color="#ff000000" width="1"/>
+    <textFormat font="FranklinGothic,7,-1,5,50,0,0,0,0,0" hasOutline="0" foregroundColor="#ff000000" VerticalIndentMargin="0" backgroundColor="#00000000" IndentMargin="0" Alignment="ALIGNVCENTER,ALIGNLEADING"/>
+   </text>
+  </area>
+  <area rotation="0" left="-100" top="-100" height="2250" zposition="104" alpha="1" areatype="imagearea" width="2145" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="2.768189509306261" applySpotColor="0"/>
+   <image left="-574" safeContainerLocation="persistent" top="0" filename="20190208_130148.jpeg" useABK="1" scale="0.744048">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_130148.jpg" child="20190208_130148.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2045" top="-100" height="2250" zposition="105" alpha="1" areatype="imagearea" width="2379.802669411974" isResizable="1">
+   <border enabled="0" color="#ffbbbbbb" position="outside" width="5" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-475" filename="20190208_113933.jpeg" useABK="1" scale="0.972142">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_113933.jpg" child="20190208_113933.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2017.932815431853" top="1267.173827817984" height="732.3261721785816" zposition="106" alpha="1" areatype="imagearea" width="975.8844819786736" isResizable="1">
+   <border enabled="0" color="#ffbbbbbb" position="outside" width="5" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="0" filename="20190209_110700.jpeg" useABK="1" scale="0.299153">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_110700.jpg" child="20190209_110700.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2096" top="70.72505073297339" height="522.3308050717953" zposition="107" alpha="1" areatype="imagearea" width="696.0484910877813" isResizable="1">
+   <border enabled="0" color="#ffbbbbbb" position="outside" width="5" applySpotColor="0"/>
+   <image left="-481" safeContainerLocation="persistent" top="-268" filename="20190209_132657.jpeg" useABK="1" scale="0.22045">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_132657.jpg" child="20190209_132657.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="423.8482371315808" top="230.0558558047687" height="363" zposition="1002" alpha="1" areatype="textarea" width="1233.500000131323" isResizable="1">
+   <border enabled="0" color="#ff000000" position="outside" width="2" applySpotColor="0"/>
+   <text isSpineText="0" areaTextType="title" applySpotColor="0"><![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><html><head><meta name="qrichtext" content="1" /><style type="text/css">p, li { white-space: pre-wrap; }</style></head><body style=" font-family:'Futura Bk BT'; font-size:34pt; font-weight:600; font-style:normal;"><table style="-qt-table-type: root; margin-top:37px; margin-bottom:0px; margin-left:0px; margin-right:0px;"><tr><td style="border: none;"><p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000000;">2019 Szczyrk</span></p><p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000000;">8-10.2</span></p></td></tr></table></body></html>]]><outline enabled="1" color="#fff8f8f8" width="2"/>
+    <textFormat font="Futura Bk BT,34,-1,5,75,0,0,0,0,0" hasOutline="1" outlineWidth="2" foregroundColor="#ff000000" VerticalIndentMargin="50" backgroundColor="#00000000" outlineColor="4294506744" IndentMargin="0" Alignment="ALIGNVCENTER,ALIGNHCENTER"/>
+   </text>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="spine" pagenr="0">
+  <bundlesize height="2050" width="4141"/>
+  <designElementIDs background="201"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="4"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="fullcover" pagenr="0">
+  <bundlesize height="2050" width="4141"/>
+  <designElementIDs background="201" layout="124978"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="4"/>
+  <background templatename="collage_cover_front_quad,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="-1" type="emptypage" pagenr="0">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <area rotation="0" left="1463.20882852292" top="-30" height="2110" zposition="100" alpha="1" areatype="imagearea" width="2813.333333333334" isResizable="1">
+   <border enabled="0" color="#ffbbbbbb" position="outside" width="5" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="0" filename="20190210_105614.jpeg" useABK="1" scale="0.697751">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190210_105614.jpg" child="20190210_105614.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="1">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="2">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190208_104320.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_104320.jpg" child="20190208_104320.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-408" filename="20190208_110051.jpeg" useABK="1" scale="0.762255">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_110051.jpg" child="20190208_110051.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="3">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="4">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190209_133645.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_133645.jpg" child="20190209_133645.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="898" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-534" safeContainerLocation="persistent" top="0" filename="51733938_345114752997800_8111209544253702144_n.jpeg" useABK="1" scale="0.470262">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/51733938_345114752997800_8111209544253702144_n.jpg" child="51733938_345114752997800_8111209544253702144_n.jpeg" nature="RELATIONSHIP_MODIFIED_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="3111" top="92" height="1866" zposition="107" alpha="1" areatype="imagearea" width="898" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-439" safeContainerLocation="persistent" top="0" filename="20190208_113936.jpeg" useABK="1" scale="0.571691">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_113936.jpg" child="20190208_113936.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="5">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_030,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="6">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-408" filename="20190208_115005.jpeg" useABK="1" scale="0.762255">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_115005.jpg" child="20190208_115005.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-504" filename="20190208_115033.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_115033.jpg" child="20190208_115033.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="7">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="8">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-504" filename="20190208_115046.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_115046.jpg" child="20190208_115046.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-504" filename="20190208_115100.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_115100.jpg" child="20190208_115100.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="9">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="10">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-504" filename="20190208_115104.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_115104.jpg" child="20190208_115104.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190208_120142.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_120142.jpg" child="20190208_120142.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="11">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="12">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190208_120525.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_120525.jpg" child="20190208_120525.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190208_122828.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_122828.jpg" child="20190208_122828.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="13">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="14">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-504" filename="20190208_124124.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_124124.jpg" child="20190208_124124.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190208_130148.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_130148.jpg" child="20190208_130148.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="15">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="16">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190208_130153.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_130153.jpg" child="20190208_130153.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190208_130154.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_130154.jpg" child="20190208_130154.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="17">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="18">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190208_181659.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_181659.jpg" child="20190208_181659.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190208_181715.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_181715.jpg" child="20190208_181715.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="19">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="20">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190209_074037.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_074037.jpg" child="20190209_074037.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190209_074046.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_074046.jpg" child="20190209_074046.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="21">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="22">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-504" filename="20190209_095935.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_095935.jpg" child="20190209_095935.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-504" filename="20190209_095937(0).jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_095937(0).jpg" child="20190209_095937(0).jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="23">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="24">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-408" filename="20190209_095945.jpeg" useABK="1" scale="0.762255">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_095945.jpg" child="20190209_095945.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-408" filename="JPEG_20190209_102620_923736015168650751.jpeg" useABK="1" scale="0.762255">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/JPEG_20190209_102620_923736015168650751.jpg" child="JPEG_20190209_102620_923736015168650751.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="25">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="26">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-408" safeContainerLocation="persistent" top="0" filename="20190209_110700.jpeg" useABK="1" scale="0.762255">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_110700.jpg" child="20190209_110700.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190208_122828.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_122828.jpg" child="20190208_122828.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="27">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="28">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190209_132657.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_132657.jpg" child="20190209_132657.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="898" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-542" filename="20190209_132705.jpeg" useABK="1" scale="0.462798">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_132705.jpg" child="20190209_132705.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="1061" height="898" zposition="107" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-164" filename="20190209_133325.jpeg" useABK="1" scale="0.462798">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_133325.jpg" child="20190209_133325.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="29">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_027,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="30">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-882" safeContainerLocation="persistent" top="0" filename="20190209_133412.jpeg" useABK="1" scale="0.822751">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_133412.jpg" child="20190209_133412.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-882" safeContainerLocation="persistent" top="0" filename="20190209_133416.jpeg" useABK="1" scale="0.822751">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_133416.jpg" child="20190209_133416.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="31">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="32">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-882" safeContainerLocation="persistent" top="0" filename="20190209_133418.jpeg" useABK="1" scale="0.822751">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_133418.jpg" child="20190209_133418.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-882" safeContainerLocation="persistent" top="0" filename="20190209_133423.jpeg" useABK="1" scale="0.822751">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_133423.jpg" child="20190209_133423.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="33">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="34">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-882" safeContainerLocation="persistent" top="0" filename="20190209_133426.jpeg" useABK="1" scale="0.822751">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_133426.jpg" child="20190209_133426.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="898" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-164" filename="20190209_133430.jpeg" useABK="1" scale="0.462798">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_133430.jpg" child="20190209_133430.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="1061" height="898" zposition="107" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-164" filename="20190209_133441.jpeg" useABK="1" scale="0.462798">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_133441.jpg" child="20190209_133441.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="35">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_027,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="36">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190209_133635.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_133635.jpg" child="20190209_133635.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190209_133641.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_133641.jpg" child="20190209_133641.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="37">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="38">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190209_133642.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_133642.jpg" child="20190209_133642.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-836" safeContainerLocation="persistent" top="0" filename="20190209_133441.jpeg" useABK="1" scale="0.822751">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_133441.jpg" child="20190209_133441.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="39">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="40">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-408" safeContainerLocation="persistent" top="0" filename="20190209_133659.jpeg" useABK="1" scale="0.762255">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_133659.jpg" child="20190209_133659.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190210_093239.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190210_093239.jpg" child="20190210_093239.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="41">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="42">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190210_093242.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190210_093242.jpg" child="20190210_093242.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190210_104006.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190210_104006.jpg" child="20190210_104006.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="43">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="44">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190210_104010.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190210_104010.jpg" child="20190210_104010.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-504" filename="20190210_104012.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190210_104012.jpg" child="20190210_104012.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2784.081284874076" top="937.690343336852" height="288" zposition="1000" alpha="1" areatype="textarea" width="410" isResizable="1">
+   <border enabled="0" color="#ff000000" position="outside" width="2" applySpotColor="0"/>
+   <text isSpineText="0" areaTextType="content" applySpotColor="0"><![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><html><head><meta name="qrichtext" content="1" /><style type="text/css">p, li { white-space: pre-wrap; }</style></head><body style=" font-family:'Futura Bk BT'; font-size:34pt; font-weight:600; font-style:normal;"><table style="-qt-table-type: root; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;"><tr><td style="border: none;"><p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#ffffff;">Jest dobrze</span></p></td></tr></table></body></html>]]><outline enabled="1" color="#fff8f8f8" width="2"/>
+    <textFormat font="Futura Bk BT,34,-1,5,75,0,0,0,0,0" hasOutline="1" outlineWidth="2" foregroundColor="#ffffffff" VerticalIndentMargin="50" backgroundColor="#00000000" outlineColor="4294506744" IndentMargin="0" Alignment="ALIGNHCENTER"/>
+   </text>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="45">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="46">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-504" filename="20190210_104024.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190210_104024.jpg" child="20190210_104024.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-882" safeContainerLocation="persistent" top="0" filename="20190209_133320.jpeg" useABK="1" scale="0.822751">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_133320.jpg" child="20190209_133320.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="47">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="48">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-504" safeContainerLocation="persistent" top="0" filename="20190210_105606.jpeg" useABK="1" scale="0.617063">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190210_105606.jpg" child="20190210_105606.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="106" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-408" safeContainerLocation="persistent" top="0" filename="20190210_105611.jpeg" useABK="1" scale="0.762255">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190210_105611.jpg" child="20190210_105611.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="49">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="50">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="1866" zposition="104" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="1" color="#ff707070" position="outside" width="4" applySpotColor="0"/>
+   <image left="-882" safeContainerLocation="persistent" top="0" filename="20190209_133426.jpeg" useABK="1" scale="0.822751">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_133426.jpg" child="20190209_133426.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="105" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="0" color="#ffbbbbbb" position="outside" width="5" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-408" filename="JPEG_20190209_102620_923736015168650751.jpeg" useABK="1" scale="0.762255">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/JPEG_20190209_102620_923736015168650751.jpg" child="JPEG_20190209_102620_923736015168650751.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="125115" type="normalpage" pagenr="51">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="-1" type="normalpage" pagenr="52">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_027,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="898" zposition="100" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="0" color="#ffbbbbbb" position="outside" width="5" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-542" filename="20190209_153719.jpeg" useABK="1" scale="0.462798">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190209_153719.jpg" child="20190209_153719.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="92" top="1061" height="898" zposition="101" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="0" color="#ffbbbbbb" position="outside" width="5" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-542" filename="20190208_103036.jpeg" useABK="1" scale="0.462798">
+    <relationships>
+     <relationship parent="M:/Obrazy_xcube_at_xcube/szczyrk_2018_sonecko-gorkowski/20190208_103036.jpg" child="20190208_103036.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="2142" top="92" height="1866" zposition="102" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="0" color="#ffbbbbbb" position="outside" width="5" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-496" filename="52029123_2426984490646221_2598294341784961024_n.jpeg" useABK="1" scale="0.627016">
+    <relationships>
+     <relationship parent="M:/POBIERANIE_NOWE_I_STARE/52029123_2426984490646221_2598294341784961024_n.jpg" child="52029123_2426984490646221_2598294341784961024_n.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="-1" type="normalpage" pagenr="53">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+  <background templatename="schema_quad_001,normal" layout="1"/>
+ </page>
+ <page rotation="0" designStyleID="-1" type="normalpage" pagenr="54">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201" layout="125074"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="1"/>
+  <background templatename="schema_quad_027,normal" layout="1"/>
+  <area rotation="0" left="92" top="92" height="898" zposition="100" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="0" color="#ffbbbbbb" position="outside" width="5" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-1268" filename="51544793_1_6119722952440152064_n.jpeg" useABK="1" scale="0.627016">
+    <relationships>
+     <relationship parent="M:/POBIERANIE_NOWE_I_STARE/51544793_384290412303895_6119722952440152064_n.jpg" child="51544793_1_6119722952440152064_n.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+  <area rotation="0" left="92" top="1061" height="898" zposition="101" alpha="1" areatype="imagearea" width="1866" isResizable="1">
+   <border enabled="0" color="#ffbbbbbb" position="outside" width="5" applySpotColor="0"/>
+   <image left="0" safeContainerLocation="persistent" top="-1268" filename="52313851_596610457429459_292444752681369600_n.jpeg" useABK="1" scale="0.627016">
+    <relationships>
+     <relationship parent="M:/POBIERANIE_NOWE_I_STARE/52313851_596610457429459_292444752681369600_n.jpg" child="52313851_596610457429459_292444752681369600_n.jpeg" nature="RELATIONSHIP_ONE_TO_ONE_COPY"/>
+    </relationships>
+   </image>
+  </area>
+ </page>
+ <page rotation="0" designStyleID="-1" type="emptypage" pagenr="0">
+  <bundlesize height="2050" width="4100"/>
+  <designElementIDs background="201"/>
+  <background rotation="0" templatename="Weiss,normal," type="1" alignment="3"/>
+ </page>
+ <userfeedback></userfeedback>
+ <statistics sessionsUsed="2" countPauses="0" pauseTime="0" assistantUsed="1" elapsedTimeGross="2019-02-13T11:47:25" fotosRemoved="24" elapsedTimeNet="12691" fotosAdded="32"/>
+</fotobook>

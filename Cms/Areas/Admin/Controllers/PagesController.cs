@@ -6,6 +6,16 @@ using System.Web.Mvc;
 
 namespace Cms.Areas.Admin.Controllers
 {
+    public class AllowHtmlBinder : IModelBinder
+    {
+        public object BindModel(ControllerContext controllerContext,
+            ModelBindingContext bindingContext)
+        {
+            var request = controllerContext.HttpContext.Request;
+            var name = bindingContext.ModelName;
+            return request.Unvalidated[name]; //magic happens here
+        }
+    }
     public class PagesController : Controller
     {
         // GET: Admin/Pages
@@ -117,12 +127,12 @@ namespace Cms.Areas.Admin.Controllers
             //
             return View(model);
         }
-
+        [HttpGet]
         public ActionResult Edit(int id)
         {
             //Declarete PageView Model
-
             PageViewModel model;
+            ViewBag.Title = "Edycja strony";
 
             //Get db Context
             using (Db db = new Db())
@@ -139,9 +149,11 @@ namespace Cms.Areas.Admin.Controllers
                     model = new PageViewModel(dTO);
                 }
             }
-
             return View(model);
         }
+
+
+
         [HttpPost]
         public ActionResult Edit(PageViewModel model)
         {
@@ -238,7 +250,8 @@ namespace Cms.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult SortPages(int[] id) {
+        public ActionResult SortPages(int[] id)
+        {
 
             int count = 1;
             using (Db db = new Db())
@@ -246,7 +259,8 @@ namespace Cms.Areas.Admin.Controllers
                 PageDTO dTO;
                 //sort pages 
 
-                foreach(var item in id ){
+                foreach (var item in id)
+                {
                     dTO = db.Pages.Find(item);
                     dTO.Sorting = count;
                     db.SaveChanges();
@@ -258,7 +272,8 @@ namespace Cms.Areas.Admin.Controllers
         }
 
         //Edit SideBar 
-        public ActionResult EditSidebar() {
+        public ActionResult EditSidebar()
+        {
             ViewBag.Title = "Edycja paska bocznego";
 
             //get view model - sidebar
@@ -272,7 +287,7 @@ namespace Cms.Areas.Admin.Controllers
                 model = new SideBarViewModel(dTO);
             }
 
-                return View(model);
+            return View(model);
         }
 
         [HttpPost]
@@ -281,7 +296,8 @@ namespace Cms.Areas.Admin.Controllers
             int id = model.Id;
 
             //using context 
-            using (Db db = new Db()) {
+            using (Db db = new Db())
+            {
                 //sidebar context dto
                 SideBarDTO dTO = db.SideBar.Find(id);
                 //get model Data
