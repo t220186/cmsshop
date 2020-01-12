@@ -51,17 +51,19 @@
                 //set success message 
                 ajaxText.html('<span class="alert alert-success">Podana kategoria została dodana </span>');
                 //success - add new item to table
-                if (!$("#table#categoryTable").length) {
-                    location.reload();
-                } else {
+               // if (!$("#table#categoryTable").length) {
+               //     location.reload();
+              //  } else {
                     newCatTextInput.val("");
 
                     var toAppend = $("table#categoryTable tbody tr:last").clone();
-                    //  toAppend.attr("id", "id_" + data);
-                    //   toAppend.find("item.Name").val(catName);
-                    //   toAppend.find("a.delete").attr('href', "/admin/shop/DeleteCategory/" + data);
+                    toAppend.attr("id", "id_" + data);
+                    console.log(toAppend);
+                toAppend.find("#item_Name").val(catName);
+               
+                       toAppend.find("a.delete").attr('href', "/admin/shop/DeleteCategory/" + data);
                     table.append(toAppend);
-                }
+               // }
             }
             
 
