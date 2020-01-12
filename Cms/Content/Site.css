@@ -31,3 +31,11 @@ table.sorting  tr:not(.home) {
 .ui-state-hightlight{
     border: solid 1px #ff0000;
 }
+
+.a-text{
+    display:none;
+}
+.new-cat{
+    margin-top:30px;
+    position:relative;
+}

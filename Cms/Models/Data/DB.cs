@@ -7,6 +7,7 @@ namespace Cms.Models.Data
     {
         public DbSet<PageDTO> Pages { get; set; }
         public DbSet<SideBarDTO> SideBar { get; set; }
+        public DbSet<CategoriesDTO> Categories { get; set; }
 
     }
 } 
