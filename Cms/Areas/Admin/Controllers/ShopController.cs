@@ -61,7 +61,7 @@ namespace Cms.Areas.Admin.Controllers
 
             }
    
-            return catName;
+            return id;
         }
 
 
