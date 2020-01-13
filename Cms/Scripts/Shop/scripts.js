@@ -114,89 +114,31 @@
 
     });
 
-   /*******************************
-    * 
-    * 
-     * 
-     * $('.a-text').hide();
-    $('#newCatName').keyup(function (e) {
+    /******************Edycja*******************/
+
+    var orginalTextValue;
+    //get orginalTextValue;
+    $('table#categoryTable input.text-box').dblclick(function () {
+        orginalTextValue = $(this).val();
+        $(this).attr("readonly", false);
+
+    })
+    $('table#categoryTable input.text-box').keyup(function (e) {
         if (e.keyCode == 13) {
-            addNewCategory();
+            //e blur
+            $(this).blur();
+
         }
+            
     });
+    //.aDivText
+    $('table#categoryTable input.text-box').blur(function (e) {
+        var $this = $(this);
+        var aDivText = $this.parent().find('.aDivText');
+        var newCatName = $this.val();
+        //substring of id_
+        var ids = $this.parent().parent().attr("id").substr('3');
 
-    $('#newCatA').click(function (e) { e.preventDefault(); addNewCategory(); })
 
-     * */
-
+    });
 });
-
-
-///add new category to shop
-/**
- * 
- * @todo add alert message
- *              
- * 
- * 
-**/
-function addNewCategory() {
-
-    var spinner = $('.a-text');
-
-    var tableCatgories = "table#categoryTable tbody";
-
-    var newCategoryValue = $('#catName').val();
-    console.log(newCategoryValue);
-    //prevent to post with less 2 
-    if (newCategoryValue.length < 2) {
-        return false;
-    }
-    spinner.show();
-    tableRefresh(tableCatgories);
-    $.post("/Admin/Shop/AddCategories", { catName: newCategoryValue }, function (data) {
-        spinner.hide();
-
-        var response = data.trim();
-        console.log(data);
-
-        if (response == 'catexists') {
-            alert('Kategoria już istnieje!');
-            return false;
-        } else {
-            //tableCategories refresh
-            tableRefresh(tableCatgories);
-            var toAdd = $(tableCatgories + 'tr:last').clone();
-
-            console.log('dodaj clona');
-            //add new row with new id and add new add category if 200
-            //  toAdd.attr("id", "id_" + data);
-            //   toAdd.find("#item_Name").val(newCategoryValue);
-            //   toAdd.find("a.delete").attr("href", "/admin/shop/DeleteCategory/" + data);
-            $(tableCatgories).append(toAdd);
-            //   $(tableCatgories).sortable("refresh");
-        }
-
-    });
-
-
-}
-
-//table reload();'
-function tableRefresh(tableName) {
-
-    /**
-     * @todo Update table refresh to async list
-     * **/
-    if (!$(tableName).length) {
-
-        setTimeout(function () {
-            $(tableName).fadeOut("slow", $(tableName).html("<h4>Odświeżam</h4>"), 2000);
-        });
-
-    }
-
-
-}
-
-function sortable() { }

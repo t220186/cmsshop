@@ -49,3 +49,8 @@ table.sorting.categories td {
 table.sorting.form-control {
     width: 100% !important;
 }
+
+.aDivText{
+    position:absolute;
+
+}
