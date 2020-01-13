@@ -1,13 +1,18 @@
 ﻿$(document).ready(function (e) {
     //draft !!
-
+    /**
+     * @todo: 
+     * -sortowanie
+     * -usuwanie wielu kategorii na raz
+     * -komunikaty
+     * */
 
     //draft do przepisania póżniej na oddzielne funkcje 
     // ************************************
     //add new Category
     var newCatA = $("a#newCatA");
     var newCatTextInput = $("#catName");
-    var ajaxText = $(".ajax-text");
+    var ajaxText = $(".message");
     var table = $("table#categoryTable tbody");
 
     //get keyup "enter"
@@ -18,9 +23,12 @@
 
     });
 
+    // ajaxText.hide();
     //onClick 
     newCatA.click(function (e) {
         e.preventDefault;
+        //show message
+        ajaxText.html('<span class="alert alert-danger">Podana kategoria już istnieje</span>');
         var catName = newCatTextInput.val();
         //check length
 
@@ -29,14 +37,13 @@
             return false;
         }
 
-        ajaxText.show();
+        ///  ajaxText.show();
         var url = "/Admin/Shop/AddCategories";
         //post
         $.post(url, { catName: catName }, function (data) {
             //if false or error 
             var response = data.trim();
-            console.log(response);
-
+            //if cat exists
             if (response == "catexists") {
 
                 ajaxText.html('<span class="alert alert-danger">Podana kategoria już istnieje</span>');
@@ -47,25 +54,28 @@
                 });
                 return false;
             } else {
-               
+
                 //set success message 
                 ajaxText.html('<span class="alert alert-success">Podana kategoria została dodana </span>');
-                //success - add new item to table
-               // if (!$("#table#categoryTable").length) {
-               //     location.reload();
-              //  } else {
-                    newCatTextInput.val("");
 
-                    var toAppend = $("table#categoryTable tbody tr:last").clone();
-                    toAppend.attr("id", "id_" + data);
-                    console.log(toAppend);
+                //success - add new item to table
+                // if (!$("#table#categoryTable").length) {
+                //     location.reload();
+                //  } else {
+                newCatTextInput.val("");
+                ajaxText.fadeOut("slow", function () {
+                    ajaxText.html('');
+                }, 2000);
+                var toAppend = $("table#categoryTable tbody tr:last").clone();
+                toAppend.attr("id", "id_" + data);
+                console.log(toAppend);
                 toAppend.find("#item_Name").val(catName);
-               
-                       toAppend.find("a.delete").attr('href', "/admin/shop/DeleteCategory/" + data);
-                    table.append(toAppend);
-               // }
+
+                toAppend.find("a.delete").attr('href', "/admin/shop/DeleteCategory/" + data);
+                table.append(toAppend);
+                // }
             }
-            
+
 
             //out
 
@@ -77,8 +87,36 @@
     });
 
 
+    //sortowanie tabeli kategori! 
 
-    /***************'
+    $('table#categoryTable tbody').sortable({
+        //items
+        items: "tr:not(.home)",
+        placeholder: "ui-state-hightlight",
+        update: function () {
+            var ids = $('table#categoryTable tbody').sortable("serialize");
+            //method sortable
+            var url = "/Admin/Shop/ReorderCategories";
+            //post
+            $.post(url, ids, function (data){ });
+        }
+    })
+
+
+
+    //delete items
+
+    $("body").on("click", "a.delete", function () {
+
+        if (!confirm("Potwierdzasz usunięcie kategori")) return false;
+
+
+
+    });
+
+   /*******************************
+    * 
+    * 
      * 
      * $('.a-text').hide();
     $('#newCatName').keyup(function (e) {

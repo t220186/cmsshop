@@ -32,10 +32,20 @@ table.sorting  tr:not(.home) {
     border: solid 1px #ff0000;
 }
 
-.a-text{
+.message {
     display:none;
 }
 .new-cat{
     margin-top:30px;
     position:relative;
+}
+
+table.sorting.categories td {
+
+    padding: 20px !important;
+
+
+}
+table.sorting.form-control {
+    width: 100% !important;
 }

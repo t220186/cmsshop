@@ -1,6 +1,5 @@
 ﻿using Cms.Models.Data;
 using Cms.Models.ViewModels.Shop;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -33,21 +32,24 @@ namespace Cms.Areas.Admin.Controllers
          * return true or TS
          * 
          **/
-         //Post: Admin/Shop/AddCategories
+        //Post: Admin/Shop/AddCategories
         [HttpPost]
         //async response
         public string AddCategories(string catName)
         {
             //set string id
-            string  id;
+            string id;
 
             //context
 
-            using (Db db = new Db()) {
+            using (Db db = new Db())
+            {
 
                 CategoriesDTO dTO = new CategoriesDTO();
-                if(db.Categories.Any(x =>x.Name == catName))
-                     return "catexists";
+                if (db.Categories.Any(x => x.Name == catName))
+                {
+                    return "catexists";
+                }
                 //dto 
                 dTO.Name = catName;
                 dTO.Slug = catName.Replace(" ", "_").ToLower();
@@ -60,10 +62,52 @@ namespace Cms.Areas.Admin.Controllers
                 id = dTO.Id.ToString();
 
             }
-   
+
             return id;
         }
 
+        //POST: Admin/Shop/ReorderCategories
+        [HttpPost]
+        public string ReorderCategories(int[] id)
+        {
+            string status = "false"; ;
 
+            using (Db db = new Db())
+            {
+                //init couter
+                int count = 1;
+                //get dto 
+                CategoriesDTO dTO;
+                //sort category
+                foreach (var catId in id)
+                {
+
+                    dTO = db.Categories.Find(catId);
+                    dTO.Sorting = count;
+                    //save db changess
+                    db.SaveChanges();
+                    //count sorting
+                    count++;
+                    status = "true";
+                }
+
+
+            }
+
+            return status;
+        }
+        //GET: Admin/Shop/DeleteCategory
+        [HttpGet]
+        public ActionResult DeleteCategory(int id)
+        {
+            using (Db db = new Db())
+            {
+                CategoriesDTO dTO  = db.Categories.Find(id);
+                db.Categories.Remove(dTO);
+                db.SaveChanges();
+            }
+            //
+            return RedirectToAction("Categories");
+        }
     }
 }

@@ -6,7 +6,7 @@
     <input type="text" name="catName" id="catName" class="form-control" />
     <p>
         <a href="#" id="newCatA">Dodaj nową kategorię</a>
-        <span class="a-text">
+        <span class="message">
             <img src="~/Content/img/2.gif" />
 
         </span>
@@ -23,7 +23,7 @@ else
 {
     
 
-    <table class="table sorting table-condensed table-hover table-striped" id="categoryTable">
+    <table class="table categories sorting table-condensed table-hover table-striped" id="categoryTable">
         <tr class="home">
             <th>
                 @Html.DisplayNameFor(model => model.Name)
@@ -34,7 +34,7 @@ else
 
         @foreach (var item in Model)
         {
-            <tr>
+            <tr id="id_@item.ID">
                 <td>
 
 
@@ -45,7 +45,7 @@ else
 
                 <td>
 
-                    @Html.ActionLink("Usuń", "Delete", new { id = item.ID }, new { @class = "delete" })
+                    @Html.ActionLink("Usuń", "DeleteCategory", new { id = item.ID }, new { @class = "delete" })
                 </td>
             </tr>
         }
