@@ -22,7 +22,15 @@
         }
 
     });
-
+    /***
+     * 
+     * 
+     * @todo:
+     * -nie działa przeładowanie tabeli przy pierwszym nowym rekordzie !
+     * -dodać komunikaty i wywalić loader (spinner)
+     * 
+     * 
+     * ****/
     // ajaxText.hide();
     //onClick 
     newCatA.click(function (e) {
@@ -98,7 +106,7 @@
             //method sortable
             var url = "/Admin/Shop/ReorderCategories";
             //post
-            $.post(url, ids, function (data){ });
+            $.post(url, ids, function (data) { });
         }
     })
 
@@ -129,7 +137,7 @@
             $(this).blur();
 
         }
-            
+
     });
     //.aDivText
     $('table#categoryTable input.text-box').blur(function (e) {
@@ -138,6 +146,37 @@
         var newCatName = $this.val();
         //substring of id_
         var ids = $this.parent().parent().attr("id").substr('3');
+        var url = "/Admin/Shop/RenameCategory";
+        if (newCatName.length < 2) {
+            //
+            alert('Nazwa kategorii jest za krótka');
+            $this.attr("readonly", true);
+            return false;
+        }
+
+        $.post(url, { newCatName: newCatName, id: ids }, function (data) {
+            var response = data.trim();
+            if (response == "catexists") {
+                alert('Nazwa kategorii już istnieje');
+
+                $this.val(orginalTextValue);
+                aDivText.html("<span class='alert alert-danger'>Nazwa kategorii już istnieje</span>");
+                $this.attr("readonly", true);
+                return false;
+            } else {
+                aDivText.html("<span class='alert alert-success'>Kategoria została zmieniona</span>");
+                //set fadeOut for alert message
+                setTimeout(function () {
+                    aDivText.fadeOut("fast", function () {
+                        $(this).html("");
+                    });
+                }, 2000);
+
+            }
+            //set if done
+        }).done(function () {
+            $this.attr("readonly", true);
+        });
 
 
     });

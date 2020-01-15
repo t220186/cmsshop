@@ -102,12 +102,49 @@ namespace Cms.Areas.Admin.Controllers
         {
             using (Db db = new Db())
             {
-                CategoriesDTO dTO  = db.Categories.Find(id);
+                CategoriesDTO dTO = db.Categories.Find(id);
                 db.Categories.Remove(dTO);
                 db.SaveChanges();
             }
             //
             return RedirectToAction("Categories");
         }
+
+        //POST RenameCategory
+        [HttpPost]
+        public string RenameCategory(string newCatName, int id)
+        {
+            string response;
+
+            //using 
+            using (Db db = new Db())
+            {
+                //check if newCatName exist return "catexists"
+
+                CategoriesDTO dTO = new CategoriesDTO();
+                if (db.Categories.Any(x => x.Name == newCatName))
+                {
+                    return "catexists";
+                }
+                /**
+                 * 
+                 * @todo
+                 * -add modification date
+                 * */
+                //find eleement to edit
+                dTO = db.Categories.Find(id);
+                //
+                dTO.Name = newCatName;
+                //set slug
+                dTO.Slug = newCatName.Replace(" ", "-").ToLower();
+                db.SaveChanges();
+                response = "true";
+
+            }
+            return response;
+
+        }
+
+
     }
 }
