@@ -122,7 +122,7 @@
 
     });
 
-    /******************Edycja*******************/
+    /******************Edycja Kategorii*******************/
 
     var orginalTextValue;
     //get orginalTextValue;
@@ -180,4 +180,33 @@
 
 
     });
+    /********************Produkty***********************/
+
+
+   //dodawanie zdjęć
+    $('#imageUpload').change(function () {
+        //preview image
+        readUrl(this);
+    })
+
+
 });
+
+//czytaj plik do podglądu 
+function readUrl(input) {
+    //Podgld pliku
+    if (input.files && input.files[0]) {
+        //czytaj plik 
+        var reader = new FileReader();
+        //
+        reader.onload = function (e) {
+            //
+            $('img#imagePrv').attr("src", e.target.result).width(200).height(200);
+
+        }
+        reader.readAsDataURL(input.files[0]);
+
+    } 
+        return false;
+   
+}
