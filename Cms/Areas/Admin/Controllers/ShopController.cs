@@ -1,12 +1,12 @@
 ﻿using Cms.Models.Data;
 using Cms.Models.ViewModels.Shop;
+using PagedList;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
-using static System.Net.WebRequestMethods;
 
 namespace Cms.Areas.Admin.Controllers
 {
@@ -149,24 +149,15 @@ namespace Cms.Areas.Admin.Controllers
 
         }
 
-        ///Products - base
 
-        public ActionResult Products()
-        {
-            //action name
-            ViewBag.Title = "Produkty ";
-            //get All categories and list
-            
-
-            return View();
-        }
         /**
          * Add new Products
          * 
          **/
         //GET Admin/Shop/AddProducts
         [HttpGet]
-        public ActionResult AddProduct() {
+        public ActionResult AddProduct()
+        {
 
             ViewBag.Title = "Nowy produkt";
 
@@ -174,38 +165,41 @@ namespace Cms.Areas.Admin.Controllers
             //initModel
 
             ProductsViewModel model = new ProductsViewModel();
-        //    CategoriesViewModel categories = new CategoriesViewModel();
+            //    CategoriesViewModel categories = new CategoriesViewModel();
             using (Db db = new Db())
             {
-              model.Categories = new SelectList(db.Categories.ToList(),"Id","Name");
+                model.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
 
 
             }
 
-                return View(model);
+            return View(model);
         }
         //AddProduct - save 
         //POST: /Admin/Shop/AddProduct
         //HttpPostedFileBase - zapis plików i przesyłanie
         [HttpPost]
-        public ActionResult AddProduct(ProductsViewModel model, HttpPostedFileBase file) {
+        public ActionResult AddProduct(ProductsViewModel model, HttpPostedFileBase file)
+        {
 
 
             //valid
             if (!ModelState.IsValid)
             {
                 //if model !is valid must return Categories Select List
-                using (Db db = new Db()) {
+                using (Db db = new Db())
+                {
 
-                    model.Categories = new SelectList(db.Categories.ToList(),"Id", "Name");
+                    model.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
                     return View(model);
                 }
             }
             int id;
             //
-            using (Db db = new Db()) {
+            using (Db db = new Db())
+            {
                 //valid is Any Products exists
-                if(db.Products.Any(x => x.Name == model.Name))
+                if (db.Products.Any(x => x.Name == model.Name))
                 {
                     ModelState.AddModelError("", "Produkt o tej samej nazwie już istnieje");
                     return View(model);
@@ -223,9 +217,9 @@ namespace Cms.Areas.Admin.Controllers
 
                 //get new  add productId
                 id = product.Id;
-               
+
             }
-            
+
 
             //Redirect to 
             TempData["Sm"] = "Dodałeś nowy produkt";
@@ -238,7 +232,7 @@ namespace Cms.Areas.Admin.Controllers
             //idProduct2String file save to products and Product Id
             var pathString2 = Path.Combine(originDir.ToString(), "Products" + id.ToString());
             //var thumbs
-            var pathString3 = Path.Combine(originDir.ToString(), "Products" + id.ToString()+"\\Thumbs");
+            var pathString3 = Path.Combine(originDir.ToString(), "Products" + id.ToString() + "\\Thumbs");
             //var gallery
             var pathString4 = Path.Combine(originDir.ToString(), "Products" + id.ToString() + "\\Gallery");
             //var gallery thumbs
@@ -246,44 +240,56 @@ namespace Cms.Areas.Admin.Controllers
 
             //check and create
             if (!Directory.Exists(pathString1))
-            //create new directory
+            {
+                //create new directory
                 Directory.CreateDirectory(pathString1);
+            }
             //2
             if (!Directory.Exists(pathString2))
+            {
                 //create new directory
                 Directory.CreateDirectory(pathString2);
+            }
             //3
 
             if (!Directory.Exists(pathString3))
+            {
                 //create new directory
                 Directory.CreateDirectory(pathString3);
+            }
             //4
             if (!Directory.Exists(pathString4))
+            {
                 //create new directory
                 Directory.CreateDirectory(pathString4);
+            }
             //
             if (!Directory.Exists(pathString5))
+            {
                 //create new directory
                 Directory.CreateDirectory(pathString5);
+            }
 
             //file extension check
             if (file != null && file.ContentLength > 0)
             {
                 //this is image- file extension
                 string ext = file.ContentType.ToLower();
-                if(ext != "image/jpg" && ext != "image/jpeg" && ext != "image/png" && ext != "image/gif")
+                if (ext != "image/jpg" && ext != "image/jpeg" && ext != "image/png" && ext != "image/gif")
                 {
-                    using (Db db = new Db()) {
+                    using (Db db = new Db())
+                    {
 
                         model.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
                         ModelState.AddModelError("", "Obraz nie został przesłany ponieważ jest nieprawidłowe rozszerzenie obrazu");
                         return View(model);
                     }
-                       
+
                 }
                 string imageName = file.FileName;
 
-                using (Db db = new Db()) {
+                using (Db db = new Db())
+                {
 
                     ProductsDTO dTO = db.Products.Find(id);
                     dTO.ImageName = imageName;
@@ -311,7 +317,51 @@ namespace Cms.Areas.Admin.Controllers
             return RedirectToAction("AddProduct");
 
         }
+        /**
+         * lista produktów // paginacja
+         * */
+        ///Products - base
+        /**
+         *  int? - > parametr int  może być null
+         *  catId - >filtrowanie po kategoriach produktów
+         **/
+        //GET: /Admin/Shop/Products
+        [HttpGet]
+        public ActionResult Products(int? page, int? catId)
+        {
+            //action name
+            ViewBag.Title = "Lista produktów ";
+            //get All categories and list
+            //lista produktów
+            //list<ViewModel> nazwa zmiennej
+            List<ProductsViewModel> listOfProductViewModel;
+            //set page 4 pagination if(??)[querystring] to the first page 
+            var pageNumber = page ?? 1;
+            using (Db db = new Db())
+            {
+                //get Product list to array
+                /**
+                 * jezeli catId jest null lub 0 lub przyjmuje wartosc CategoriesId
+                 * */
+                listOfProductViewModel = db.Products
+                    .ToArray()
+                    .Where(x => catId == null || catId == 0 || x.CategoriesId == catId)
+                    .Select(x => new ProductsViewModel(x))
+                    .ToList();
+                //categories DropdownList
+                ViewBag.Categories = new SelectList(db.Categories.ToList(),"Id","Name");
+                //ustawiam wybraną kategorię 
+                ViewBag.SelectedCat = catId.ToString();
 
+            }
+            //ustawienie paginacji
 
+            ViewBag.productDir = "Products";
+            var onePageOfProducts = listOfProductViewModel.ToPagedList(pageNumber, 5);
+            //view bag do widoku(pagedList)
+            ViewBag.OnePageOfProducts = onePageOfProducts;
+            //zwraca widok z listą produktów
+            return View(listOfProductViewModel);
+        }
     }
 }
