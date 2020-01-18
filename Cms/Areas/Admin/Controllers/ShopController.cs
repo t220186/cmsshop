@@ -363,5 +363,41 @@ namespace Cms.Areas.Admin.Controllers
             //zwraca widok z listą produktów
             return View(listOfProductViewModel);
         }
+
+        //products edit
+        //GET /Admmin/Shop/EditProduct
+        [HttpGet]
+        public ActionResult EditProduct(int? Id)
+        {
+
+            var checkId = Id ?? 0;
+            if (checkId == 0) { return RedirectToAction("Products"); }
+            //Nazwa Akcji
+            ViewBag.Title = "EditProduct";
+
+            ProductsViewModel model;
+            using (Db db = new Db()) {
+                //get products to edit
+               ProductsDTO dTO =  db.Products.Find(Id);
+                if(dTO == null)
+                {
+                    return Content("Ten produkt nie istnieje");
+                }
+                model = new ProductsViewModel(dTO);
+
+                //lista kategorii
+                model.Categories = new SelectList(db.Categories.ToList(),"Id","Name");
+                //zdjęcia 
+
+                //galeria ->Pobieram zdjęcia z katalogu image upload -> gallery //thumbs
+                model.GalleryImages = Directory.EnumerateFiles(Server.MapPath("~/Images/Uploads/Products"+Id+"/Gallery/Thumbs")).Select(fn=>Path.GetFileName(fn));
+
+
+            }
+                //model do wdoku
+                return View(model);
+        }
+
+
     }
 }

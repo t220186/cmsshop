@@ -189,6 +189,18 @@
         readUrl(this);
     })
 
+    //filtrowanie produktów według kategorii 
+    //przekazywanie selected Category
+
+    $('select[name=SelectedCategory]').change(function () {
+       
+        var url = $(this).val();
+        if (url) {
+            window.location = '/admin/shop/products?catId=' + url;
+        }
+        return false;
+    });
+
 
 });
 
