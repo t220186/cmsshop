@@ -1,6 +1,7 @@
 ﻿using Cms.Models.Data;
 using Cms.Models.ViewModels.Shop;
 using PagedList;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -349,7 +350,7 @@ namespace Cms.Areas.Admin.Controllers
                     .Select(x => new ProductsViewModel(x))
                     .ToList();
                 //categories DropdownList
-                ViewBag.Categories = new SelectList(db.Categories.ToList(),"Id","Name");
+                ViewBag.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
                 //ustawiam wybraną kategorię 
                 ViewBag.SelectedCat = catId.ToString();
 
@@ -376,28 +377,303 @@ namespace Cms.Areas.Admin.Controllers
             ViewBag.Title = "EditProduct";
 
             ProductsViewModel model;
-            using (Db db = new Db()) {
+            using (Db db = new Db())
+            {
                 //get products to edit
-               ProductsDTO dTO =  db.Products.Find(Id);
-                if(dTO == null)
+                ProductsDTO dTO = db.Products.Find(Id);
+                if (dTO == null)
                 {
                     return Content("Ten produkt nie istnieje");
                 }
                 model = new ProductsViewModel(dTO);
 
                 //lista kategorii
-                model.Categories = new SelectList(db.Categories.ToList(),"Id","Name");
+                model.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
                 //zdjęcia 
 
                 //galeria ->Pobieram zdjęcia z katalogu image upload -> gallery //thumbs
-                model.GalleryImages = Directory.EnumerateFiles(Server.MapPath("~/Images/Uploads/Products"+Id+"/Gallery/Thumbs")).Select(fn=>Path.GetFileName(fn));
+                model.GalleryImages = Directory.EnumerateFiles(Server.MapPath("~/Images/Uploads/Products" + Id + "/Gallery/Thumbs")).Select(fn => Path.GetFileName(fn));
 
 
             }
-                //model do wdoku
-                return View(model);
+            //model do wdoku
+            return View(model);
         }
 
+        //POST /Admin/Shop/EditProduct
+        [HttpPost]
+        public ActionResult EditProduct(ProductsViewModel model, HttpPostedFileBase file)
+        {
+
+
+            //set idProduct
+            int Id = model.Id;//form {POST}
+                              //category for dropdowns list
+            using (Db db = new Db())
+            {
+                model.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
+            }
+
+            ///Set gallery images
+
+            model.GalleryImages = Directory.EnumerateFiles(Server.MapPath("~/Images/Uploads/Products" + Id + "/Gallery/Thumbs")).Select(fn => Path.GetFileName(fn));
+            //check model isValid
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            //check Product name dont exists for nay other ID
+            using (Db db = new Db())
+            {
+                if (db.Products.Where(x => x.Id != Id).Any(x => x.Name == model.Name))
+                {
+                    //Set error state
+                    ModelState.AddModelError("", "Produkt o tej samej nazwie już istnieje");
+                    //return model
+                    return View(model);
+                }
+
+            }
+            //edycja i zapis produktu
+            using (Db db = new Db())
+            {
+                ProductsDTO dTO = db.Products.Find(Id);
+                dTO.Name = model.Name;
+                dTO.Slug = model.Name.Replace(" ", "-").ToLower();
+                dTO.Price = model.Price;
+                dTO.CategoriesId = model.CategoriesId;
+                dTO.Description = model.Description;
+                dTO.ImageName = model.ImageName;
+
+                //save changes
+                db.SaveChanges();
+            }
+
+            //
+            TempData["Sm"] = "Produkt" + model.Name + " został zaktualizowany";
+            //Image Upload
+            #region Image Upload
+            if (file != null && file.ContentLength > 0)
+            {
+                //this is image- file extension
+                string ext = file.ContentType.ToLower();
+                if (ext != "image/jpg" &&
+                    ext != "image/jpeg" &&
+                    ext != "image/png" &&
+                    ext != "image/gif")
+                {
+                    using (Db db = new Db())
+                    {
+
+                        model.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
+                        ModelState.AddModelError("", "Obraz nie został przesłany ponieważ jest nieprawidłowe rozszerzenie obrazu");
+                        return View(model);
+                    }
+
+                }
+
+                //struktura katalogów
+
+                var originDir = new DirectoryInfo(string.Format("{0}Images\\Uploads", Server.MapPath(@"\")));
+                //path string 1
+                var pathString1 = Path.Combine(originDir.ToString(), "Products");
+                //idProduct2String file save to products and Product Id
+                var pathString2 = Path.Combine(originDir.ToString(), "Products" + Id.ToString());
+                //var thumbs
+                var pathString3 = Path.Combine(originDir.ToString(), "Products" + Id.ToString() + "\\Thumbs");
+                //var gallery
+                var pathString4 = Path.Combine(originDir.ToString(), "Products" + Id.ToString() + "\\Gallery");
+                //var gallery thumbs
+                var pathString5 = Path.Combine(originDir.ToString(), "Products" + Id.ToString() + "\\Gallery\\Thumbs");
+
+                //check and create
+                if (!Directory.Exists(pathString1))
+                {
+                    //create new directory
+                    Directory.CreateDirectory(pathString1);
+                }
+                //2
+                if (!Directory.Exists(pathString2))
+                {
+                    //create new directory
+                    Directory.CreateDirectory(pathString2);
+                }
+                //3
+
+                if (!Directory.Exists(pathString3))
+                {
+                    //create new directory
+                    Directory.CreateDirectory(pathString3);
+                }
+                //4
+                if (!Directory.Exists(pathString4))
+                {
+                    //create new directory
+                    Directory.CreateDirectory(pathString4);
+                }
+                //
+                if (!Directory.Exists(pathString5))
+                {
+                    //create new directory
+                    Directory.CreateDirectory(pathString5);
+                }
+                //delete old file from folder
+
+                DirectoryInfo di1 = new DirectoryInfo(pathString2);
+                DirectoryInfo di2 = new DirectoryInfo(pathString3);
+                foreach (var itemFile in di1.GetFiles())
+                {
+                    itemFile.Delete();
+                }
+
+                //delete thumbs
+                foreach (var itemFile2 in di2.GetFiles())
+                {
+                    itemFile2.Delete();
+                }
+                //save file name in db
+                string ImageName = file.FileName;
+                using (Db db = new Db())
+                {
+                    ProductsDTO dTO = db.Products.Find(Id);
+                    dTO.ImageName = ImageName;
+                    db.SaveChanges();
+                }
+                //zapis plików na serwerze format - 
+                var path = string.Format("{0}\\{1}", pathString2, ImageName);
+
+                var pathThumb = string.Format("{0}\\{1}", pathString3, ImageName);
+
+                //file Save as
+                file.SaveAs(path);
+                //change image size
+                WebImage imgThumbs = new WebImage(file.InputStream);
+                imgThumbs.Resize(200, 200);
+                //save thumbs
+                imgThumbs.Save(pathThumb);
+
+            }
+            #endregion
+            //redirect to action
+            return RedirectToAction("EditProduct");
+        }
+        //GET /Admin/Shop/DeleteProduct
+        [HttpGet]
+        public ActionResult DeleteProduct(int? Id)
+        {
+
+            //check Id  and check id exists
+            if (Id == null)
+            {
+                return RedirectToAction("Products");
+            }
+            string productName = "";
+            //  string productImage = "";
+            using (Db db = new Db())
+            {
+                ProductsDTO dTO = db.Products.Find(Id);
+                productName = dTO.Name;
+                //productImage = dTO.ImageName;
+
+                db.Products.Remove(dTO);
+                db.SaveChanges();
+            }
+            #region Delete ImageFolder 
+            var originDir = new DirectoryInfo(string.Format("{0}Images\\Uploads", Server.MapPath(@"\")));
+            //path string 1
+            var pathString1 = Path.Combine(originDir.ToString(), "Products");
+            //idProduct2String file save to products and Product Id
+            var pathString2 = Path.Combine(originDir.ToString(), "Products" + Id.ToString());
+            //var thumbs
+            var pathString3 = Path.Combine(originDir.ToString(), "Products" + Id.ToString() + "\\Thumbs");
+
+            //check and create
+            if (!Directory.Exists(pathString1))
+            {
+                //create new directory
+                Directory.CreateDirectory(pathString1);
+            }
+            //2
+            if (Directory.Exists(pathString2))
+            {
+                //delete directory if exists
+
+                Directory.Delete(pathString2, true);
+                //force delete
+            }
+            #endregion
+
+
+            TempData["Sm"] = "Produkt" + productName + " został zaktualizowany";
+            return RedirectToAction("Products");
+        }
+        [HttpPost]
+        //POST: /Admin/Shop/SaveGalleryImages
+        public ActionResult SaveGalleryImages(int id)
+        {
+
+            //foreach images
+            foreach (string item in Request.Files)
+            {
+                //pliki z requestu
+                HttpPostedFileBase file = Request.Files[item];
+
+                if (file != null && file.ContentLength > 0)
+                {
+                    //sciezki do katalogów
+                    var originDir = new DirectoryInfo(string.Format("{0}Images\\Uploads", Server.MapPath(@"\")));
+                    //sciezka do katalogu
+                    var pathString2 = Path.Combine(originDir.ToString(), "Products" + id.ToString() + "\\Gallery");
+                    //miniaturki
+                    var pathString3 = Path.Combine(originDir.ToString(), "Products" + id.ToString() + "\\Gallery\\Thumbs");
+                    // sciezka  plus nazwa pliku 
+                    var path = string.Format("{0}\\{1}", pathString2, gId() + file.FileName);
+                    // sciezka  plus nazwa pliku 
+                    var thumbs = string.Format("{0}\\{1}", pathString3, gId() + file.FileName);
+                    //zapis plików (borazek plus miniatura)
+                    file.SaveAs(path);
+                    //miniaturka
+                    WebImage imgThumbs = new WebImage(file.InputStream);
+                    imgThumbs.Resize(200, 200);
+                    imgThumbs.Save(thumbs);
+
+                }
+            }
+            return View();
+        }
+
+        //GET /Admin/Shop/DeleteImage
+        [HttpPost]
+        public void DeleteImage(string imageName, int id)
+        {
+            
+            //zdjecie
+            string fullPath1 = Request.MapPath("~/Images/Uploads/Products" + id.ToString() + "/Gallery/" + imageName);
+            //miniaturka
+            string fullPath2 = Request.MapPath("~/Images/Uploads/Products" + id.ToString() + "/Gallery/Thumbs/" + imageName);
+
+            if (System.IO.File.Exists(fullPath1)) {
+                System.IO.File.Delete(fullPath1);
+
+            }
+
+            //miniaturka
+            if (System.IO.File.Exists(fullPath2))
+            {
+                System.IO.File.Delete(fullPath2);
+
+            }
+
+        }
+        //tDrive get uniqId
+        public string gId()
+        {
+            Guid guid = Guid.NewGuid();
+            string gId = guid.ToString().Substring(5,3);
+            Console.WriteLine(gId);
+            return gId;
+        }
 
     }
 }

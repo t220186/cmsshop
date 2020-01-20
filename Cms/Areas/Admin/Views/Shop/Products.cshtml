@@ -2,21 +2,27 @@
 
 <!--using -->
 
-@using PagedList.Mvc; 
+@using PagedList.Mvc;
 @using PagedList;
 <!-- Import css-->
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 <h2>@ViewBag.Title</h2>
+@if (TempData["SM"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SM"]
+    </div>
+}
 
-<hr/>
+<hr />
 <!-- Selected Categories-->
 <select id="SelectedCategory" name="SelectedCategory">
     <option value="0">Wybierz kategorię</option>
-    @foreach(var item in ViewBag.Categories)
+    @foreach (var item in ViewBag.Categories)
     {//sprawdza czy viewBag SelectedCat => jest obecnie widziana kategoria to Zaznacz(selected)
-        if(ViewBag.SelectedCat == item.Value)
+        if (ViewBag.SelectedCat == item.Value)
         {
-            <option selected ="selected" value="@item.Value">@item.Text</option>
+            <option selected="selected" value="@item.Value">@item.Text</option>
 
         }
         else
@@ -26,7 +32,7 @@
 
     }
 </select>
-<hr/>
+<hr />
 
 <p>
     @Html.ActionLink("Dodaj nowy produkt", "AddProduct")
@@ -34,7 +40,7 @@
 
 
 
-<table class="table table-bordered table-hover"  >
+<table class="table table-bordered table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
@@ -42,7 +48,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
-       
+
         <th>
             @Html.DisplayNameFor(model => model.Price)
         </th>
@@ -52,7 +58,7 @@
         <th>
             @Html.DisplayNameFor(model => model.ImageName)
         </th>
-       
+
     </tr>
 
     @foreach (var product in ViewBag.OnePageOfProducts)
@@ -61,33 +67,33 @@
             <td>
                 @product.Name
 
-               
+
             </td>
             <td>
                 @Html.Raw(product.Description)
             </td>
-           
+
             <td>
                 @product.Price
             </td>
-          
+
             <td>
                 <!--Link do zdjęcia -->
                 <a href="/Admin/Shop/EditProduct/@product.Id">
                     <img src="/Images/Uploads/@ViewBag.productDir@product.Id/thumbs/@product.ImageName" class="img-responsive" />
-                    
+
 
                 </a>
-               
+
             </td>
             <td>
                 @Html.ActionLink("Edycja", "EditProduct", new { id = product.Id }) |
-                
-                @Html.ActionLink("Usuń", "DeleteProduct", new { id = product.Id })
+
+                @Html.ActionLink("Usuń", "DeleteProduct", new { id = product.Id },new { @class= "delete" })
             </td>
         </tr>
     }
 
 </table>
-<hr/>
-@Html.PagedListPager((IPagedList)ViewBag.OnePageOfProducts, page => Url.Action("Products", new { page,catId = ViewBag.SelectedCat}))
+<hr />
+@Html.PagedListPager((IPagedList)ViewBag.OnePageOfProducts, page => Url.Action("Products", new { page, catId = ViewBag.SelectedCat }))

@@ -10,7 +10,9 @@ namespace Cms
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/jquery-ui-1.12.1.js"
+                        "~/Scripts/jquery-ui-1.12.1.js",
+                        //dropZone plugins
+                        "~/Scripts/dropzone/dropzone.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(

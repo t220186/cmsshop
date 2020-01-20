@@ -528,6 +528,7 @@
     <Content Include="Areas\Admin\Views\Shop\Products.cshtml" />
     <Content Include="Areas\Admin\Views\Shop\AddProduct.cshtml" />
     <Content Include="Areas\Admin\Views\Shop\EditProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Shop\SaveGalleryImages.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
@@ -872,6 +873,14 @@
     <Content Include="Scripts\ckeditor\skins\v2\skin.js" />
     <Content Include="Scripts\ckeditor\skins\v2\templates.css" />
     <Content Include="Scripts\ckeditor\themes\default\theme.js" />
+    <Content Include="Scripts\dropzone\basic.css" />
+    <Content Include="Scripts\dropzone\basic.min.css" />
+    <Content Include="Scripts\dropzone\dropzone-amd-module.js" />
+    <Content Include="Scripts\dropzone\dropzone-amd-module.min.js" />
+    <Content Include="Scripts\dropzone\dropzone.css" />
+    <Content Include="Scripts\dropzone\dropzone.js" />
+    <Content Include="Scripts\dropzone\dropzone.min.css" />
+    <Content Include="Scripts\dropzone\dropzone.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />

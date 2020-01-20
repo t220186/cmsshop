@@ -116,7 +116,7 @@
 
     $("body").on("click", "a.delete", function () {
 
-        if (!confirm("Potwierdzasz usunięcie kategori")) return false;
+        if (!confirm("Potwierdzasz usunięcie elementu")) return false;
 
 
 
@@ -200,6 +200,42 @@
         }
         return false;
     });
+
+    //dodawanie galeri obrazów
+
+    /************** @dropzone Images gallery  ********************/
+    Dropzone.options.dropzoneForm = {
+        acceptedFiles: "image/*",
+        init: function () {
+            this.on("complete", function (file) {
+                if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+                    Location.reload();
+                }
+            });
+            this.on("sending", function (file, xhr, formData) {
+                formData.append("id", $("input[name=modelId]").val());
+                //{ /*** @TODO: napisać metodę ładowania obrazków do podglądu }
+
+            })
+        }
+    }
+
+    ///usuwanie obrazków z galerii 
+    $("a.deleteImage").click(function (e) {
+        e.preventDefault();
+        if (!confirm("Potwierdzasz usunięcie obrazka")) { return false };
+        //this
+        $this = $(this);
+        var url = "/admin/shop/DeleteImage";
+        var ImageName = $this.data("name");
+
+        //post
+        $.post(url, { id: $("input[name=modelId]").val(), imageName: ImageName }, function (data) {
+            console.log(ImageName);
+            $this.parent().fadeOut("fast");
+        });
+    });
+
 
 
 });
