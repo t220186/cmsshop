@@ -26,14 +26,20 @@ namespace Cms
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/templatesc").Include(
+                "~/Scripts/jquery-{version}.js",
+                 "~/Scripts/esm/popper.js",
+                 "~/Template/node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+                 "~/Template/front.js"
+                ));
+
 
             bundles.Add(new ScriptBundle("~/bundles/dashboard").Include(
                           "~/Scripts/Shop/scripts.js"
                 ));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Template/css").Include(
+                      "~/Template/css/main.css"));
         }
     }
 }

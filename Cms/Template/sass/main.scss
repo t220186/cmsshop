@@ -1,0 +1,42 @@
+﻿
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+header {
+    background-color: rgba(0, 0, 0, .85) !important;  
+}
+site-header {
+    background-color: rgba(0, 0, 0, .85);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+
+.site-header a {
+    color: #999;
+    transition: ease-in-out color .15s;
+}
+
+.site-header a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+main > .container {
+    padding: 60px 15px 0;
+}
+
+.footer {
+
+    background-color: #f5f5f5;
+}
+
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+code {
+    font-size: 80%;
+}
