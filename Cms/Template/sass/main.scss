@@ -11,6 +11,7 @@ site-header {
     backdrop-filter: saturate(180%) blur(20px);
 }
 
+
 .site-header a {
     color: #999;
     transition: ease-in-out color .15s;
@@ -21,6 +22,9 @@ site-header {
     text-decoration: none;
 }
 
+body {
+    padding-top: 5rem;
+}
 
 
 main > .container {
@@ -39,4 +43,12 @@ main > .container {
 
 code {
     font-size: 80%;
+}
+
+//aside Catgories
+
+aside.categories {
+    padding-top: 5rem;
+    width: fit-content;
+    padding-top: 10rem;
 }

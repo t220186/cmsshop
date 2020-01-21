@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#563d7c">
     <title>@ViewBag.PageTitle</title>
 
     @Styles.Render("~/Template/css")
@@ -11,10 +12,9 @@
 </head>
 <body>
     <header>
-        <nav class="site-header sticky-top py-1">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <div class="container d-flex flex-column flex-md-row justify-content-between">
 
-                @Html.ActionLink("Nazwa sklepu", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
 
 
                 <!-- render menu -->
@@ -25,27 +25,42 @@
 
         </nav>
     </header>
+
     <main role="main" class="flex-shrink-0">
-        <div class="container">
-            <!--Partial - render body-->
-            @if (ViewBag.Sidebar == "1")
-            {
-                <div class="col-xs-12 col-md-7">
-                    @RenderBody()
-                </div>
-                <div class="col-xs-12 col-md-3">
-                    <!-- Render Sidebar-->
+       
+        
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-4 col-md-2">
+                        <!-- Categories Partial-->
+                        @Html.Action("CategoryMenuPartial", "Shop")
+                    </div>
+                    <!--Partial - render body-->
+                    @if (ViewBag.Sidebar == "1")
+                    {
 
+                        <div class="col-md-8 ">
+                            <p class="lead">
+                                @RenderBody()
+                            </p>
+                        </div>
+                        <div class="col-md-4 order-md-3 mb-4">
+                            <!-- Render Sidebar-->
+                            @Html.Action("PagesSideBarPartial", "Pages")
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-xs-6 col-md-9 ">
+                            <p class="lead">
+                                @RenderBody()
+                            </p>
+                        </div>
+                    }
                 </div>
-            }
-            else
-            {
-                <div class="col-xs-12 col-lg-12">
-                    @RenderBody()
-                </div>
-            }
+            </div>
+        
 
-        </div>
 
     </main>
 
@@ -55,10 +70,7 @@
         </div>
     </footer>
 
-
-
-
-    @Scripts.Render("~/bundles/templatesc")
+    @Scripts.Render("~/bundles/templates")
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -29,7 +29,6 @@ namespace Cms.Areas.Admin.Controllers
                     .ToList();
             }
 
-
             return View(categoriesList);
         }
         /**
@@ -349,8 +348,8 @@ namespace Cms.Areas.Admin.Controllers
                     .Where(x => catId == null || catId == 0 || x.CategoriesId == catId)
                     .Select(x => new ProductsViewModel(x))
                     .ToList();
-                //categories DropdownList
-                ViewBag.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
+                //categories DropdownList (categories sorting)
+                ViewBag.Categories = new SelectList(db.Categories.ToArray().OrderBy(x => x.Sorting).Select(x => new CategoriesViewModel(x)).ToList(), "Id", "Name");
                 //ustawiam wybraną kategorię 
                 ViewBag.SelectedCat = catId.ToString();
 

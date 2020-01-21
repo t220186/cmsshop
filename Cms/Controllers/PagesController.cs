@@ -69,8 +69,36 @@ namespace Cms.Controllers
             return PartialView(pageVMList);
 
         }
-    }
-    /**
-     * Partial view
-     **/
+
+        /**
+         * @name Partial PagesSideBarPartial
+         */
+        //GET: /Pages/PagesSideBarPartial
+        [HttpGet]
+        public ActionResult PagesSideBarPartial() {
+            //init pageSideBarView
+            SideBarViewModel pageSideBarView;
+            //get sideBar 
+            using (Db db = new Db()) {
+                SideBarDTO dTO = db.SideBar.Find(1);
+                //set SideBarViewModel
+                pageSideBarView = new SideBarViewModel(dTO);
+
+            }
+            //return model view model
+            return PartialView(pageSideBarView);
+                
+                }
+    } 
+    //Products
+
+    //basket
+
+
+    //register  User
+
+    //send registration and basket email
+
+    //set payu paypal pay method
+
 }

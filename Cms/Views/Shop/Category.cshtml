@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Cms.Models.ViewModels.Shop.ProductsViewModel>
+
+@{
+    ViewBag.Title = "Category";
+    TempData["CategoriesSelected"] = ViewBag.CategoryName;
+}
+
+<div class="container">
+    <h1>Produkty w @ViewBag.CategoryName</h1>
+    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+
+</div>
+</hr>
+<div class="album py-5 bg-light">
+    <div class="container">
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="/Images/Uploads/Products@(item.Id)/thumbs/@item.ImageName" class="img-responsive" />
+
+                        <div class="card-body">
+                            <h3>@item.Name</h3>
+                            <hr />
+                            <p class="card-text">
+
+
+                                <!-- Limit Characters of Html.Raw-->
+                                @Html.Raw(!String.IsNullOrEmpty(item.Description) ? item.Description.Substring(0, 250) : item.Description)... .
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="/shop/products/@item.Slug.Replace(" ","_").ToLower()">Zobacz więcej</a>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Kup za <h3> @item.Price</h3></button>
+
+                                </div>
+                                <small class="text-muted">@item.Price</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>

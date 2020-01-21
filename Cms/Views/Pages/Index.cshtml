@@ -1,5 +1,9 @@
 ﻿@model Cms.Models.ViewModels.Pages.PageViewModel
 
-
+@{ 
+    ViewBag.Title = ViewBag.PageTitle;
+    TempData["PageTitle"] = ViewBag.PageTitle;
+}
+<h2</h3>
 @Html.Raw(Model.Body)
 

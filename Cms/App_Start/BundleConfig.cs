@@ -26,7 +26,7 @@ namespace Cms
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/templatesc").Include(
+            bundles.Add(new ScriptBundle("~/bundles/templates").Include(
                 "~/Scripts/jquery-{version}.js",
                  "~/Scripts/esm/popper.js",
                  "~/Template/node_modules/bootstrap/dist/js/bootstrap.bundle.js",
@@ -37,6 +37,20 @@ namespace Cms
             bundles.Add(new ScriptBundle("~/bundles/dashboard").Include(
                           "~/Scripts/Shop/scripts.js"
                 ));
+            //template admin
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+
+                    "~/Content/css/bootstrap.min.css",
+                    "~/Content/css/bootstrap-theme.min.css",
+                    "~/Content/css/PagedList.css",
+                     "~/Content/css/Site.css"
+
+                     ));
+
+            //template css draft
+            /**
+             * @TODO corect vs tools node 
+             */
 
             bundles.Add(new StyleBundle("~/Template/css").Include(
                       "~/Template/css/main.css"));
