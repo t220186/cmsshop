@@ -30,6 +30,7 @@ namespace Cms
                 "~/Scripts/jquery-{version}.js",
                  "~/Scripts/esm/popper.js",
                  "~/Template/node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+                 "~/Scripts/jquery.fancybox.js",
                  "~/Template/front.js"
                 ));
 
@@ -44,7 +45,6 @@ namespace Cms
                     "~/Content/css/bootstrap-theme.min.css",
                     "~/Content/css/PagedList.css",
                      "~/Content/css/Site.css"
-
                      ));
 
             //template css draft
@@ -53,7 +53,9 @@ namespace Cms
              */
 
             bundles.Add(new StyleBundle("~/Template/css").Include(
-                      "~/Template/css/main.css"));
+                      "~/Template/css/main.css",
+                       "~/Content/jquery.fancybox.css"
+                      ));
         }
     }
 }

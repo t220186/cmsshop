@@ -612,9 +612,12 @@ namespace Cms.Areas.Admin.Controllers
         public ActionResult SaveGalleryImages(int id)
         {
 
+
             //foreach images
             foreach (string item in Request.Files)
             {
+                //hash fileName
+                string hash = gId();
                 //pliki z requestu
                 HttpPostedFileBase file = Request.Files[item];
 
@@ -627,9 +630,9 @@ namespace Cms.Areas.Admin.Controllers
                     //miniaturki
                     var pathString3 = Path.Combine(originDir.ToString(), "Products" + id.ToString() + "\\Gallery\\Thumbs");
                     // sciezka  plus nazwa pliku 
-                    var path = string.Format("{0}\\{1}", pathString2, gId() + file.FileName);
+                    var path = string.Format("{0}\\{1}", pathString2, hash + file.FileName);
                     // sciezka  plus nazwa pliku 
-                    var thumbs = string.Format("{0}\\{1}", pathString3, gId() + file.FileName);
+                    var thumbs = string.Format("{0}\\{1}", pathString3, hash + file.FileName);
                     //zapis plików (borazek plus miniatura)
                     file.SaveAs(path);
                     //miniaturka

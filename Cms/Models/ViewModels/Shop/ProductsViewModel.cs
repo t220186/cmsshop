@@ -15,7 +15,7 @@ namespace Cms.Models.ViewModels.Shop
             Id = row.Id;
             Name = row.Name;
             Description = row.Description;
-            Slug = row.Name;
+            Slug = row.Slug;
             Price = row.Price;
             CategoriesId = row.CategoriesId;
             ImageName = row.ImageName;

@@ -1,0 +1,9 @@
+﻿@model Cms.Models.ViewModels.Cart.CartViewModel
+
+<div class="ajaxCart">
+
+    <span>Koszyk: @Model.Quantity  / @Model.Price zł</span>
+
+
+    @Html.ActionLink("Przejdź do koszyka", "Index", "Cart")
+</div>

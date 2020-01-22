@@ -1,5 +1,6 @@
 ﻿using Cms.Models.Data;
 using Cms.Models.ViewModels.Shop;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -50,10 +51,11 @@ namespace Cms.Controllers
                 //db.context.where,order.select.return
 
                 CategoriesDTO dTO = db.Categories.Where(x => x.Slug == name).FirstOrDefault();
+                Console.WriteLine(dTO);
                 //check slug exists
-                //if(dTO == null) {
-                //    return RedirectToAction("Index", "Pages");
-                //}
+                if (dTO == null) {
+                    return RedirectToAction("Index", "Pages");
+                }
 
 
                 //set category Id
@@ -75,7 +77,7 @@ namespace Cms.Controllers
         //Product details
         //GET: /Shop/products/{name}
         [HttpGet]
-    //    [ActionName("produkt-szczegoly")]
+     // [ActionName("produkt-szczegoly")]
         public ActionResult Products(string name)
         {
             //init product view model

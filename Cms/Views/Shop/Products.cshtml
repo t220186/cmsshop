@@ -17,7 +17,7 @@
         @Html.Raw(Model.Description)
     
         <div class="addToCart">
-            <a href="#" class="addToCart btn btn-sm btn-outline-secondary">Dodaj do koszyka</a>
+            <a href="#" class="addToCart btn btn-sm btn-outline-secondary" data-productid="@Model.Id">Dodaj do koszyka</a>
             <span class="loader">
                 <img src="~/Content/img/2.gif" alt="Loader" />
             </span>
@@ -28,7 +28,33 @@
     </div>
 
     <hr/>
+    
+    <div class=" productsGallery">
+        <div class="row"><div class="lead"><h3>Galeria zdjęć</h3></div></div>
+        <div class="row">
+            @foreach (var itemsImage in Model.GalleryImages)
+            {
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
 
+                    <a href="/Images/Uploads/Products@(Model.Id)/Gallery/@(itemsImage)" class="fancybox" rel="gallery1">
+                        <img src="/Images/Uploads/Products@(Model.Id)/Gallery/Thumbs/@(itemsImage)" />
+                        
+                    </a>
+
+
+                   
+                    
+                    
+                </div>
+            </div>
+
+            }
+        </div>
+
+      
+
+    </div>
 
 
 

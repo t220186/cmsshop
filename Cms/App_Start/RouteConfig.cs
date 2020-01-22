@@ -30,6 +30,8 @@ namespace Cms
             routes.MapRoute("PagesSideBarPartial", "Pages/PagesSideBarPartial", new { controller = "Pages", action = "PagesSideBarPartial" }, new[] { "Cms.Controllers" });
             //Routing Partial shop Categoies
             routes.MapRoute("CategoryMenuPartial", "Shop/CategoryMenuPartial", new{ controller = "Shop" , action= "CategoryMenuPartial" }, new[] { "Cms.Controllers" });
+            //Routing Partial Shop Cart
+            routes.MapRoute("Cart", "Cart/{action}/{id}", new { controller="Cart", action="Index" , id = UrlParameter.Optional }, new[] { "Cms.Controllers" });
 
             // routes.MapRoute(
             //    

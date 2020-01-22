@@ -33,8 +33,8 @@
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="/shop/products/@item.Slug.Replace(" ","_").ToLower()">Zobacz więcej</a>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Kup za <h3> @item.Price</h3></button>
+                                    <a href="/shop/products/@item.Slug.ToLower()">Zobacz więcej</a>
+                                    <button type="button" class="addToCart btn btn-sm btn-outline-secondary" data-productid="@item.Id">Kup za <h3> @item.Price</h3></button>
 
                                 </div>
                                 <small class="text-muted">@item.Price</small>
