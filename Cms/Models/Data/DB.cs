@@ -9,6 +9,11 @@ namespace Cms.Models.Data
         public DbSet<SideBarDTO> SideBar { get; set; }
         public DbSet<CategoriesDTO> Categories { get; set; }
         public DbSet<ProductsDTO> Products { get; set; }
-        
+
+        //users
+        public DbSet<UsersDTO> Users { get; set; }
+
+        public DbSet<RolesDTO> Roles { get; set; }
+
     }
 } 

@@ -162,13 +162,17 @@
     <Compile Include="Models\Data\DB.cs" />
     <Compile Include="Models\Data\PageDTO.cs" />
     <Compile Include="Models\Data\ProductsDTO.cs" />
+    <Compile Include="Models\Data\RolesDTO.cs" />
     <Compile Include="Models\Data\SideBarDTO.cs" />
+    <Compile Include="Models\Data\UsersDTO.cs" />
     <Compile Include="Models\ViewModels\Cart\CartViewModel.cs" />
     <Compile Include="Models\ViewModels\Pages\PageViewModel.cs" />
     <Compile Include="Models\ViewModels\Pages\SideBarViewModel.cs" />
     <Compile Include="Models\ViewModels\Pages\StringAttribute.cs" />
     <Compile Include="Models\ViewModels\Shop\CategoriesViewModel.cs" />
     <Compile Include="Models\ViewModels\Shop\ProductsViewModel.cs" />
+    <Compile Include="Models\ViewModels\Users\RolesViewModel.cs" />
+    <Compile Include="Models\ViewModels\Users\UsersViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
