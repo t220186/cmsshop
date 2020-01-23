@@ -23,6 +23,9 @@ namespace Cms
             routes.MapRoute("Pages","{page}", new { controller="Pages", action="Index"},new[] { "Cms.Controllers" });
             //shop products
             routes.MapRoute("Shop", "Shop/{action}/{name}", new { controller = "Shop", action = "Category", name = UrlParameter.Optional }, new[] { "Cms.Controllers" });
+            //Routing dl stron AccountController
+            routes.MapRoute("Account", "Account/{action}/{id}", new { controller = "Account", action = "index", id = UrlParameter.Optional }, new[] { "Cms.Controllers" });
+
             /******PARTIAL**************/
             //Routing Partial - menu 
             routes.MapRoute("PagesMenuPartial", "Pages/PagesMenuPartial", new { controller = "Pages", action = "PagesMenuPartial" }, new[] { "Cms.Controllers" });
@@ -32,6 +35,9 @@ namespace Cms
             routes.MapRoute("CategoryMenuPartial", "Shop/CategoryMenuPartial", new{ controller = "Shop" , action= "CategoryMenuPartial" }, new[] { "Cms.Controllers" });
             //Routing Partial Shop Cart
             routes.MapRoute("Cart", "Cart/{action}/{id}", new { controller="Cart", action="Index" , id = UrlParameter.Optional }, new[] { "Cms.Controllers" });
+           
+
+
 
             // routes.MapRoute(
             //    

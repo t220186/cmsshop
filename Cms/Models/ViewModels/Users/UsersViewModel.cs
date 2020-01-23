@@ -39,6 +39,8 @@ namespace Cms.Models.ViewModels.Users
         [Required]
         [Display(Name = "Hasło")]
         public string Password { get; set; }
+        [Display(Name = "Powtórz hasło")]
+        public string ConfirmPassword { get; set; }
 
     }
 }
