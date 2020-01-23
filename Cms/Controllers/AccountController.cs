@@ -1,4 +1,5 @@
-﻿using Cms.Models.Data;
+﻿using Cms.Models;
+using Cms.Models.Data;
 using Cms.Models.ViewModels.Users;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace Cms.Controllers
@@ -34,6 +36,8 @@ namespace Cms.Controllers
             {
                 return View(model);
             }
+            int IdUzytkownika;
+            string sendMessage = "";
             //check password s-s
             if (!model.Password.Equals(model.ConfirmPassword)) { 
                 ModelState.AddModelError("", "Hasła nie pasują do siebie");
@@ -63,17 +67,31 @@ namespace Cms.Controllers
                         Password = model.Password
                     };
                 //get it and set new UsersRole
-               
                 db.Users.Add(Dto);
 
                 db.SaveChanges();
+                //get Default Role Id
+               
+                UsersRoleDTO usersRoleDTO = new UsersRoleDTO()
+                {
+                    UserId = Dto.Id,
+                    RoleId = 1
+                };
+                IdUzytkownika = Dto.Id;
+                db.UsersRole.Add(usersRoleDTO);
+                db.SaveChanges();
+                //
+                ////////////
+                ///@TODO
+                /// send email to activate users;
 
+                //testDrive send email
+                sendMessage = SendMsg(model);
 
-
-
+            //end Context
             }
             //return model
-            TempData["Sm"] = "Użykownik nie może zostać dodany";
+            TempData["sm"] = sendMessage;
             return RedirectToAction("Login");
         }
         
@@ -135,6 +153,37 @@ namespace Cms.Controllers
 
             // Return the hexadecimal string.
             return sBuilder.ToString();
+        }
+
+        //testDrive 
+        static string SendMsg(UsersViewModel model ){
+            string errorMessage="";
+            string response = "success";
+            Config config = new Config();
+            try
+            {
+                WebMail.SmtpServer = config.smtpServerName;
+                WebMail.SmtpPort = config.SmtpPort;
+                WebMail.UserName = config.SmtpUserName;
+                WebMail.Password = config.SmtpPassword;
+                WebMail.From = config.SmtpFrom;
+
+                // Send email
+                WebMail.Send(to: model.Email,
+                    subject: "Użytkownik zarejestrowany - " + model.Username,
+                    body: "Gratulacje zarejestrowano użytkownika: "+model.FirstName+" "+model.LastName+"."
+                );
+
+            }
+            catch(Exception ex)
+            {
+                errorMessage = ex.Message;
+            }
+            
+
+             if (errorMessage == "") { return response; }
+            return errorMessage;
+
         }
     }
 }
