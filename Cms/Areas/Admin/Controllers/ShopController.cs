@@ -677,5 +677,60 @@ namespace Cms.Areas.Admin.Controllers
             return gId;
         }
 
+
+        //get Admi/shop/orders
+
+        public ActionResult Orders() {
+            //orders admin view model
+            List<OrderViewModelUse> orderLists = new List<OrderViewModelUse>();
+            using (Db db = new Db())
+            {
+                //produkty 
+                List<OrderViewModel> listaZamowien = db.Orders.ToArray().Select(x => new OrderViewModel(x)).ToList();
+                //getAll User 
+                foreach( var orderListItem in listaZamowien)
+                {
+                    //init Slownik dla produktow
+                    Dictionary<string, int> productsAndQt = new Dictionary<string, int>();
+                    //summary varcould not be set to a 'System.String' value. You must set this property to a non-null value of type 'System.Int32'. ”
+
+                    decimal total = 0m;
+                    //order details dto 
+                    List<OrderDetailsDTO> orderDetailsDTOs = db.OrdersDetails.Where(x => x.OrderId.Equals(orderListItem.OrderId)).ToList();
+                    //Users
+                    UsersDTO usersDTO = db.Users.Where(x => x.Id.Equals(orderListItem.UserId)).FirstOrDefault();
+                    string username = usersDTO.FirstName + " " + usersDTO.LastName+" Adres email:"+usersDTO.Email;
+                    foreach(var orderDetailsDTOItem in orderDetailsDTOs)
+                    {
+                        //get Product
+                        ProductsDTO productsDTO = db.Products.Where(x => x.Id.Equals(orderDetailsDTOItem.ProductId)).FirstOrDefault();
+                        //cena produktu 
+                        decimal price = productsDTO.Price;
+                        string productName = productsDTO.Name;
+                        //set to dictionary 
+                        productsAndQt.Add(productName, orderDetailsDTOItem.Quantity);
+                        //set Total++\
+                        total += orderDetailsDTOItem.Quantity * price;
+                    }
+
+                    //konstruktor list
+                    orderLists.Add(new OrderViewModelUse()
+                    {
+
+                        OrdersNumber = orderListItem.OrderId,
+                        Total = total,
+                        UserName = username,
+                        ProductsAndQuantity = productsAndQt,
+                       CreatedD = orderListItem.CreatedD,
+                    });
+
+                }
+                
+
+
+            }
+
+                return View(orderLists);
+        }
     }
 }
