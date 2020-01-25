@@ -1,7 +1,10 @@
 ﻿using Cms.Models.Data;
 using Cms.Models.ViewModels.Cart;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web.Mvc;
 
 namespace Cms.Controllers
@@ -204,6 +207,73 @@ namespace Cms.Controllers
             var result = new { response = res, TotalItems };
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult PaypalPartial()
+        {
+            List<CartViewModel> Cart = Session["Cart"] as List<CartViewModel>;
+            return PartialView(Cart);
+
+        }
+       
+        [HttpPost]
+        public ActionResult PlaceOrder() {
+            //pobiera koszyk 
+            List<CartViewModel> Cart = Session["Cart"] as List<CartViewModel>;
+            //dodaje nowe zamówienie ->jeżeli jest zalogowany użytkownik jeżeli nie to przekierowuje na stronę formularza dodania nowego uzytkownika oraz szczegolow uzytkownika
+         
+                //redirect ro createAccount
+              
+            string userName = User.Identity.Name;
+            if (string.IsNullOrEmpty(userName))
+            { // przekierowanie na stronę sklepu 
+              //   return Redirect("~/Pages/Index");
+              //bazowy adres strony profilowej 
+                return  Redirect("~/Account/CreateAccount");
+            }
+
+            //numer zamowienia
+            int orderId = 0;
+            using (Db db = new Db()) {
+                //get OrderId
+                OrderDTO orderDTO = new OrderDTO();
+                //geet user ID
+                var UserId = db.Users.FirstOrDefault(x => x.Email.Equals(userName));
+                //SET Dto Order 
+                orderDTO.UserId = UserId.Id;
+                orderDTO.CreatedD = DateTime.Now;
+                db.Orders.Add(orderDTO);
+                db.SaveChanges();
+                //getOrder Id
+                orderId = orderDTO.OrderId;
+                //init order details dto
+                OrderDetailsDTO orderDetailsDto = new OrderDetailsDTO();
+                foreach (var cartItem in Cart) {
+                    orderDetailsDto.OrderId = orderId;
+                    orderDetailsDto.ProductId = cartItem.ProductId;
+                    orderDetailsDto.Quantity = cartItem.Quantity;
+                    db.OrdersDetails.Add(orderDetailsDto);
+                    db.SaveChanges();
+                }
+                //Send email to admin with info about new Order
+                var client = new SmtpClient("smtp.mailtrap.io", 2525)
+                {
+                    Credentials = new NetworkCredential("cf2f1012b786c8", "2e684b470d2a06"),
+                    EnableSsl = true
+                };
+                client.Send("shop@example.com", "admin@example.com", "Nowe zamowienie " + orderId + " .", "Nowe zamowienie " + orderId + " .");
+
+                //reset sesion Cart
+
+                Session["Cart"] = null;
+                return View();
+            }
+
+
+        }
+
+        /**
+        * Akcja typu void nie zwraca nic
+        */
 
     }
 }

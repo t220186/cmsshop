@@ -9,6 +9,7 @@ using System.Text;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace Cms.Controllers
 {
@@ -39,39 +40,43 @@ namespace Cms.Controllers
             int IdUzytkownika;
             string sendMessage = "";
             //check password s-s
-            if (!model.Password.Equals(model.ConfirmPassword)) { 
+            if (!model.Password.Equals(model.ConfirmPassword))
+            {
                 ModelState.AddModelError("", "Hasła nie pasują do siebie");
                 return View(model);
-                }
+            }
             //find any account email
-            using (Db db = new Db()) {
-                if (db.Users.Any(x => x.Email.Equals(model.Email))) {
+            using (Db db = new Db())
+            {
+                if (db.Users.Any(x => x.Email.Equals(model.Email)))
+                {
                     ModelState.AddModelError("", "Użytkownik o podanym adresie e-mail już jest zapisany");
                     return View(model);
                 }
                 //using md5
-                using (MD5 md5Hash = MD5.Create()) {
+                using (MD5 md5Hash = MD5.Create())
+                {
                     string stringPass = GetMd5Hash(md5Hash, model.Password);
                     model.Password = stringPass;
                 }
 
 
-                    //dodaj nowego użytkownika
-                    UsersDTO Dto = new UsersDTO()
+                //dodaj nowego użytkownika
+                UsersDTO Dto = new UsersDTO()
 
-                    {
-                        FirstName = model.FirstName,
-                        LastName = model.LastName,
-                        Email = model.Email,
-                        Username = model.Email,
-                        Password = model.Password
-                    };
+                {
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Email = model.Email,
+                    Username = model.Email,
+                    Password = model.Password
+                };
                 //get it and set new UsersRole
                 db.Users.Add(Dto);
 
                 db.SaveChanges();
                 //get Default Role Id
-               
+
                 UsersRoleDTO usersRoleDTO = new UsersRoleDTO()
                 {
                     UserId = Dto.Id,
@@ -88,46 +93,185 @@ namespace Cms.Controllers
                 //testDrive send email
                 sendMessage = SendMsg(model);
 
-            //end Context
+                //end Context
             }
             //return model
             TempData["sm"] = sendMessage;
             return RedirectToAction("Login");
         }
-        
 
-        public ActionResult Login() {
+
+        public ActionResult Login()
+        {
             //sprawdzenie czy user jest już zalogowany 
 
             //logowanie użytkownika
             string UserName = User.Identity.Name;
-            if (!string.IsNullOrEmpty(UserName)) { // przekierowanie na stronę sklepu 
-            //   return Redirect("~/Pages/Index");
-                //bazowy adres strony profilowej 
+            if (!string.IsNullOrEmpty(UserName))
+            { // przekierowanie na stronę sklepu 
+              //   return Redirect("~/Pages/Index");
+              //bazowy adres strony profilowej 
                 return RedirectToAction("ProfileAccount");
             }
 
 
             return View();
         }
+        [HttpPost]
+        public ActionResult Login(LoginUserViewModel model)
+        {
+            //sprawdzenie czy formularz jest dobrze wypełniony 
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            using (MD5 md5Hash = MD5.Create())
+            {
+                string stringPass = GetMd5Hash(md5Hash, model.Password);
+                model.Password = stringPass;
+            }
+            //isValid 
+            bool isValid = false;
+           
+            //context
+            using (Db db = new Db())
+            {
+                //czy istnieje uzytkownik o podanym adresie email
+                if (db.Users.Any(x => x.Username.Equals(model.UserName) && x.Password.Equals(model.Password)))
+                {
+                    isValid = true;
+                }
+            }
+            //set user is valid 
+            if (!isValid)
+            {
+                ModelState.AddModelError("", "Nieprawidłowa nazwa użytkownika lub hasło");
+                return View(model);
+            }
+            
+           
+            
+            
+                //forms Auth
+                FormsAuthentication.SetAuthCookie(model.UserName, model.Remember);
+            ///setRoles
+           
+            
+            //redirect to default
+            return Redirect(FormsAuthentication.GetRedirectUrl(model.UserName, model.Remember));
+        }
 
 
         /////ProfileAccount
         ///
-        public ActionResult ProfileAccount() {
+        public ActionResult ProfileAccount()
+        {
+            //check users is identity
 
-
-            return View();
+            bool IsAuthenticated = User.Identity.IsAuthenticated;
+            if (!IsAuthenticated) { return RedirectToAction("Login"); }
+            //get Authenticated User
+            string UserName = User.Identity.Name;
+            //get User Model
+            ViewBag.UserName = UserName;
+            UserProfileViewModel model;
+            using (Db db = new Db())
+            {
+                UsersDTO dto = db.Users.FirstOrDefault(x => x.Username.Equals(UserName));
+                model = new UserProfileViewModel(dto);
+            }
+            return View(model);
         }
+        [HttpPost]
+        public ActionResult ProfileAccount(UserProfileViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            if (!string.IsNullOrWhiteSpace(model.Password))
+            {
+                if (!model.Password.Equals(model.ConfirmPassword))
+                {
+                    ModelState.AddModelError("", "Hasła nie pasują do siebie");
+                    return View(model);
+                }
+            }
 
+            if (!string.IsNullOrWhiteSpace(model.Password))
+            {
+                using (MD5 md5Hash = MD5.Create())
+                {
+                    //hash passwsord
+                    string newPass = GetMd5Hash(md5Hash, model.Password);
+                    model.Password = newPass;
+                }
+            }
+
+            using (Db db = new Db()) {
+                string userName = User.Identity.Name;
+                if(db.Users.Where(x=>x.Id != model.Id).Any(x => x.Username.Equals(userName)))
+                {
+                    ModelState.AddModelError("", "Użytkownik o podanym adresie email:"+ userName +" już istnieje");
+                    model.Username = "";
+                    model.Email = "";
+                }
+
+                UsersDTO dTO = db.Users.Find(model.Id);
+                dTO.FirstName = model.FirstName;
+                dTO.LastName = model.LastName;
+                dTO.Email = model.Email;
+                dTO.Username = model.Email;
+                if (!string.IsNullOrWhiteSpace(model.Password))
+                {
+                    dTO.Password = model.Password;
+                }
+                    //zapis danych
+
+                    db.SaveChanges();
+
+            }//
+            TempData["sm"] = "Profil został zaktualizowany";
+            return RedirectToAction("ProfileAccount");
+
+        }
 
         ///Partrial View Dla AccountMenu
         ///
         public ActionResult ProfileAccountMenuPartial()
         {
 
+            string UserName = User.Identity.Name;
+            bool IsAuthenticated = User.Identity.IsAuthenticated;
+            if (IsAuthenticated) { ViewBag.UserName = UserName;      
+            }
+            //get UserData and  Set ViewModel 
+            UserNavPartialViewModel model;
+                using (Db db = new Db())
+                {
+                    UsersDTO dTO = db.Users.FirstOrDefault(x => x.Username.Equals(UserName));
+                    model = new UserNavPartialViewModel
+                    {
+                        Name = dTO.FirstName + " " + dTO.LastName,
+                        Email = dTO.Email,
 
-            return View();
+                    };
+
+                }
+          
+            return PartialView(model);
+        }
+
+        public ActionResult Logout()
+        {
+            bool IsAuthenticated = User.Identity.IsAuthenticated;
+            if (IsAuthenticated == true)
+            {
+                FormsAuthentication.SignOut();
+            }
+            //Wylogowanie i przekierowanie do srony głównej sklepu
+            TempData["sm"] = "Poprawnie wylogowano";
+            return Redirect("~/");
         }
 
 
@@ -156,13 +300,14 @@ namespace Cms.Controllers
         }
 
         //testDrive 
-        static string SendMsg(UsersViewModel model ){
-            string errorMessage="";
+        static string SendMsg(UsersViewModel model)
+        {
+            string errorMessage = "";
             string response = "success";
             Config config = new Config();
             try
             {
-                WebMail.SmtpServer = config.smtpServerName;
+                WebMail.SmtpServer = config.SmtpServerName;
                 WebMail.SmtpPort = config.SmtpPort;
                 WebMail.UserName = config.SmtpUserName;
                 WebMail.Password = config.SmtpPassword;
@@ -171,17 +316,17 @@ namespace Cms.Controllers
                 // Send email
                 WebMail.Send(to: model.Email,
                     subject: "Użytkownik zarejestrowany - " + model.Username,
-                    body: "Gratulacje zarejestrowano użytkownika: "+model.FirstName+" "+model.LastName+"."
+                    body: "Gratulacje zarejestrowano użytkownika: " + model.FirstName + " " + model.LastName + "."
                 );
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 errorMessage = ex.Message;
             }
-            
 
-             if (errorMessage == "") { return response; }
+
+            if (errorMessage == "") { return response; }
             return errorMessage;
 
         }

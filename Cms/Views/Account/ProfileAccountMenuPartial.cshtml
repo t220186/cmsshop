@@ -1,0 +1,12 @@
+﻿@model Cms.Models.ViewModels.Users.UserNavPartialViewModel
+
+
+    <ul>
+        <li>
+            <a href="/Account/ProfileAccount">@Html.DisplayFor(model => model.Name)</a> 
+</li>
+        <li>
+            @Html.DisplayFor(model => model.Email)
+        </li>
+        <li><a href="/Account/Logout">Wyloguj</a></li>
+    </ul>

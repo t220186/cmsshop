@@ -1,5 +1,6 @@
 ﻿$(document).ready(function (e) {
     //image fancybox
+    $(":password").attr("autocomplete", "off").removeAttr("autocomplete");
 
     $('.fancybox').fancybox();
 
@@ -61,9 +62,19 @@
             $(".grandTotalVal").text(data.total + "zł");
             //set totalQuantity
             $(".CartQuantity").text(data.totalQuantity);
+        }).done(function (data) {
+            var url2 = "/cart/PaypalPartial";
+            $.get(url2, {}, function (data) {
+                //reload paypaldiv
+                
+
+
+                $('.paypaldiv').html($.trim(data));
+            });
         });
     });
-
+    
+   
 
     $(".RemoveProduct").click(function (e) {
         e.preventDefault;
@@ -72,7 +83,22 @@
         removeItem(ProductId);
     });
 
+    /////////////////////////////////////////////////
+    $("a.bd-placeholder-img").click(function (e) {
+        e.preventDefault;
+        var $this = $(this);
+        var url = "/cart/PlaceOrder";
 
+        //
+        $('.ajxBg').show();
+
+        $.post(url, {}, function (data) {
+            //przekierowanie do sys. paypal 
+
+
+            $("input[name='submit'").click();
+        });
+    });
 });
 
 /**

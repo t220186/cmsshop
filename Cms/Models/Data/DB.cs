@@ -17,5 +17,8 @@ namespace Cms.Models.Data
 
         public DbSet<UsersRoleDTO> UsersRole { get; set;  }
 
+        public DbSet<OrderDTO> Orders { get; set; }
+
+        public DbSet<OrderDetailsDTO> OrdersDetails { get; set; }
     }
 } 

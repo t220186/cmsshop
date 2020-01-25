@@ -162,6 +162,8 @@
     <Compile Include="Models\Config.cs" />
     <Compile Include="Models\Data\CategoriesDTO.cs" />
     <Compile Include="Models\Data\DB.cs" />
+    <Compile Include="Models\Data\OrderDetailsDTO.cs" />
+    <Compile Include="Models\Data\OrderDTO.cs" />
     <Compile Include="Models\Data\PageDTO.cs" />
     <Compile Include="Models\Data\ProductsDTO.cs" />
     <Compile Include="Models\Data\RolesDTO.cs" />
@@ -176,6 +178,8 @@
     <Compile Include="Models\ViewModels\Shop\ProductsViewModel.cs" />
     <Compile Include="Models\ViewModels\Users\LoginUserViewModel.cs" />
     <Compile Include="Models\ViewModels\Users\RolesViewModel.cs" />
+    <Compile Include="Models\ViewModels\Users\UserNavPartialViewModel.cs" />
+    <Compile Include="Models\ViewModels\Users\UserProfileViewModel.cs" />
     <Compile Include="Models\ViewModels\Users\UsersRoleViewModel.cs" />
     <Compile Include="Models\ViewModels\Users\UsersViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1059,6 +1063,10 @@
     <Content Include="Views\Cart\.cshtml" />
     <Content Include="Views\Account\CreateAccount.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\ProfileAccount.cshtml" />
+    <Content Include="Views\Account\ProfileAccountMenuPartial.cshtml" />
+    <Content Include="Views\Account\editAccount.cshtml" />
+    <Content Include="Views\Cart\PaypalPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />

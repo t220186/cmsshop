@@ -5,13 +5,14 @@
 
 
 @{
-    //if ViewBag message is null
-    if (ViewBag.Message != null)
-    {
+            int count = 1;
+            //if ViewBag message is null
+            if (ViewBag.Message != null)
+            {
         <h3>@ViewBag.Message</h3>
-    }
-    else
-    {
+            }
+            else
+            {
 
         <table class="table table-bordered table-striped  table-hover">
             <thead>
@@ -36,7 +37,7 @@
                 </tr>
             </thead>
             @foreach (var item in Model)
-            {
+        {
                 <tr class="cart@(item.ProductId)">
                     <td>
                         <img src="/Images/Uploads/Products@(item.ProductId)/thumbs/@item.Image" />
@@ -86,5 +87,15 @@
                 <td class="grandTotalVal">@ViewBag.GrandTotal</td>
             </tr>
         </table>
-    }
+        <!--Form paypal -->
+<div class="paypaldiv">
+    @Html.Action("PaypalPartial","Cart")
+
+   
+
+</div>
+
+        <!-- End Form Paypal-->
+        <a href="#" class="bd-placeholder-img btn btn-primary pull-right">Zamówienie</a>
+}
 }

@@ -6,7 +6,7 @@
     {
 
       
-        public string smtpServerName {
+        public string SmtpServerName {
             get {
                 //webmail server name
                 return (string)"";

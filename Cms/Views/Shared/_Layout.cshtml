@@ -14,54 +14,73 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <div class="container d-flex flex-column flex-md-row justify-content-between">
-
-
-
                 <!-- render menu -->
                 @Html.Action("PagesMenuPartial", "Pages")
 
-                <u class="navbar-right">
-                    @Html.Action("CartViewPartial","Cart")
+                <ul class="navbar-right">
+                    @Html.Action("CartViewPartial", "Cart")
+                </ul>
+                <ul class="navbar-right">
+
+                    @if (!Request.IsAuthenticated)
+                    {
+                        <li><a href="/Account/Login">Zaloguj</a></li>
+                    }
+                    <!-- Role -->
+                    @if (Request.IsAuthenticated)
+                    {
+                        if (User.IsInRole("default"))
+                        {
+                            @Html.Action("ProfileAccountMenuPartial", "Account")
+                        }
+                        else
+                        {
+                            <li><a href="/Admin/Dashboard/Index">Panel Administracyjny</a></li>
+                        }
+
+                    }
                 </ul>
             </div>
 
         </nav>
     </header>
 
-    <main role="main" class="flex-shrink-0">
-       
-        
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-4 col-md-2">
-                        <!-- Categories Partial-->
-                        @Html.Action("CategoryMenuPartial", "Shop")
-                    </div>
-                    <!--Partial - render body-->
-                    @if (ViewBag.Sidebar == "1")
-                    {
 
-                        <div class="col-md-8 ">
-                            <p class="lead">
-                                @RenderBody()
-                            </p>
-                        </div>
-                        <div class="col-md-4 order-md-3 mb-4">
-                            <!-- Render Sidebar-->
-                            @Html.Action("PagesSideBarPartial", "Pages")
-                        </div>
-                    }
-                    else
-                    {
-                        <div class="col-xs-6 col-md-9 ">
-                            <p class="lead">
-                                @RenderBody()
-                            </p>
-                        </div>
-                    }
+
+    <main role="main" class="flex-shrink-0">
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4 col-md-2">
+                    <!-- Categories Partial-->
+                    @Html.Action("CategoryMenuPartial", "Shop")
                 </div>
+                <!--Partial - render body-->
+                @if (ViewBag.Sidebar == "1")
+                {
+
+                    <div class="col-md-8 ">
+                        <p class="lead">
+                            @RenderBody()
+                        </p>
+                    </div>
+                    <div class="col-md-4 order-md-3 mb-4">
+                        <!-- Render Sidebar-->
+                        @Html.Action("PagesSideBarPartial", "Pages")
+                    </div>
+                }
+                else
+                {
+                    <div class="col-xs-6 col-md-9 ">
+                        <p class="lead">
+                            @RenderBody()
+                        </p>
+                    </div>
+                }
             </div>
-        
+        </div>
+
 
 
     </main>

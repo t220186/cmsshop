@@ -57,7 +57,6 @@ namespace Cms.Controllers
             //declaration Page ViewModel
             List<PageViewModel> pageVMList;
             //set List
-
             using (Db db = new Db())
             {
                 //get PageVmList
