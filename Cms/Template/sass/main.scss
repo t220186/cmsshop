@@ -72,6 +72,14 @@ footer p {
 
 /////product list  product album///////////////////////
 .card {
+    .productList {
+        background-color: #fff;
+        border: none !important;
+        height: 200px;
+        max-height: 200px;
+        width: fit-content;
+    }
+
 
     img {
         max-height: 350px;
@@ -87,6 +95,9 @@ footer p {
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
     height: 450px;
+    .card-text{
+        font-size:.70rem;
+    }
 }
 
 .card-body {
@@ -94,4 +105,6 @@ footer p {
     h3 {
         font-size: 0.75rem;
     }
+
+
 }
