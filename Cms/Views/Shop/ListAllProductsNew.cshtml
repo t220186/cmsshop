@@ -6,22 +6,17 @@
 }
 else
 {
-
     <hr />
-
     <h3>Nowe produkty w sklepie</h3>
     <!-- Section new Product-->
     <div class="album py-5 ">
         <div class="container">
-
             <div class="row">
-
-
                 @foreach (var item in Model)
                 {
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
-                            <img src="/Images/Uploads/Products@(item.Id)/thumbs/@item.ImageName" class="img-responsive" />
+                            <img src="/Images/Uploads/Products@(item.Id)/thumbs/@item.ImageName" class="img-thumbnail" />
 
                             <div class="card-body">
                                 <h3>@item.Name</h3>
@@ -29,16 +24,25 @@ else
                                 <p class="card-text">
                                     <!-- Limit Characters of Html.Raw-->
                                     @if (!String.IsNullOrEmpty(item.Description))
-                                    {
+                                    {//count length
+                                        int maxLength = 1;
+                                        if (item.Description.Length <= 100)
+                                        {
+                                            maxLength = 5;
+                                        }
+                                        else
+                                        {
+                                            maxLength = 100;
+                                        }
 
-                                        Html.Raw(!String.IsNullOrEmpty(item.Description));
+                                        @Html.Raw(item.Description.Substring(0, maxLength))
 
-                                    }
 
+                                    }... <a href="/shop/products/@item.Slug.ToLower()">Zobacz więcej</a> .
                                 </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="/shop/products/@item.Slug.ToLower()">Zobacz więcej</a>
+                                <div class="d-flex justify-content-between align-items-end">
+                                  
+                                    <div class="btn-group float-lg-right">                                       
                                         <button type="button" class="addToCart btn btn-sm btn-outline-secondary" data-productid="@item.Id">Kup za <h3> @item.Price zł</h3></button>
                                     </div>
                                 </div>
@@ -46,10 +50,7 @@ else
                         </div>
                     </div>
                 }
-
                 </div>
             </div>
-        </div>
-
-
+        </div>        
                 }

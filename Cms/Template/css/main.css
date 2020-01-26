@@ -7138,35 +7138,40 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
+header .bg-dark {
+  background-color: #000 !important; }
+
 header .navbar-nav li a {
   color: azure; }
 
-header div.navbar .navbar {
-  color: azure; }
-  header div.navbar .navbar span {
+header div.navbar {
+  border-bottom: 2px solid red; }
+  header div.navbar .navbar {
     color: azure; }
-
-header div.navbar .ajaxCart {
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-  margin-right: 1rem; }
-
-header div.navbar .cart {
-  border-color: rgba(255, 255, 255, 0.1);
-  display: inline-block;
-  vertical-align: middle;
-  content: "";
-  background: no-repeat center center;
-  background-size: 100% 100%; }
-  header div.navbar .cart img {
+    header div.navbar .navbar span {
+      color: azure; }
+  header div.navbar .ajaxCart {
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem; }
+  header div.navbar .navbar-brand {
+    color: #8C031C; }
+  header div.navbar .cart {
+    border-color: rgba(255, 255, 255, 0.1);
     display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
     vertical-align: middle;
     content: "";
     background: no-repeat center center;
-    background-size: 100% 100%;
-    color: white; }
+    background-size: 100% 100%; }
+    header div.navbar .cart img {
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      vertical-align: middle;
+      content: "";
+      background: no-repeat center center;
+      background-size: 100% 100%;
+      color: white; }
 
 body {
   padding: 0; }
@@ -7192,8 +7197,38 @@ body {
   max-width: 40rem; }
 
 footer {
+  border-top: solid 3px #ccc;
   padding-top: 3rem;
   padding-bottom: 3rem; }
 
 footer p {
   margin-bottom: .25rem; }
+
+.categories {
+  padding-top: .25rem; }
+  .categories h3 {
+    font-size: 1rem;
+    color: #A60311; }
+  .categories .list {
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem; }
+    .categories .list a {
+      color: #F20F38; }
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  height: 450px; }
+  .card img {
+    max-height: 350px; }
+
+.card-body h3 {
+  font-size: 0.75rem; }

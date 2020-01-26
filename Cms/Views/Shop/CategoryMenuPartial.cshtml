@@ -1,12 +1,14 @@
 ﻿@model IEnumerable<Cms.Models.ViewModels.Shop.CategoriesViewModel>
-
-
-    <h3>Kategorie</h3>
-    <ul>
-        @foreach (var item in Model)
-        {
-            <li>
-                <a href="/shop/category/@item.Slug.ToLower()">@item.Name</a>
-            </li>
-        }
-    </ul>
+    <div class="categories">
+        <h3>
+            Kategorie
+        </h3>
+        <ul class="list-group list-group-flush">
+            @foreach (var item in Model)
+            {
+                <li class=" list">
+                    <a href="/shop/category/@item.Slug.ToLower()">@item.Name</a>
+                </li>
+            }
+        </ul>
+    </div>

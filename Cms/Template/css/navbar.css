@@ -1,0 +1,34 @@
+header .bg-dark {
+  background-color: #000 !important; }
+
+header .navbar-nav li a {
+  color: azure; }
+
+header div.navbar {
+  border-bottom: 2px solid red; }
+  header div.navbar .navbar {
+    color: azure; }
+    header div.navbar .navbar span {
+      color: azure; }
+  header div.navbar .ajaxCart {
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem; }
+  header div.navbar .navbar-brand {
+    color: #B31000; }
+  header div.navbar .cart {
+    border-color: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat center center;
+    background-size: 100% 100%; }
+    header div.navbar .cart img {
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      vertical-align: middle;
+      content: "";
+      background: no-repeat center center;
+      background-size: 100% 100%;
+      color: white; }

@@ -13,8 +13,11 @@
             <div class="album py-5 bg-light">
                
                     <div class="col-md-12">
-                        <div class="card mb-12 shadow-sm">
-                            <img src="/Images/Uploads/Products@(Model.Id)/thumbs/@Model.ImageName" class="img-responsive" />
+                        <div class="card mb-12 shadow-sm d-flex">
+                            <div class="justify-content-between">
+                                <img src="/Images/Uploads/Products@(Model.Id)/@Model.ImageName" class="img-fluid rounded mx-auto d-block" />
+                            </div>
+                           
 
                             <div class="card-body">
                                 <h3>@Model.Name </h3>
@@ -47,7 +50,7 @@
                                                 <div class="card mb-4 shadow-sm">
 
                                                     <a href="/Images/Uploads/Products@(Model.Id)/Gallery/@(itemsImage)" class="fancybox" rel="gallery1">
-                                                        <img src="/Images/Uploads/Products@(Model.Id)/Gallery/Thumbs/@(itemsImage)" />
+                                                        <img src="/Images/Uploads/Products@(Model.Id)/Gallery/Thumbs/@(itemsImage)" class="img-thumbnail rounded mx-auto d-block " />
 
                                                     </a>
 

@@ -1,5 +1,11 @@
-﻿//{Navbar
+﻿
+
+
+//{Navbar
 header {
+    .bg-dark {
+        background-color: #000 !important;
+    }
 
     .navbar-nav {
         li {
@@ -10,8 +16,11 @@ header {
     }
 
     div.navbar {
+        border-bottom: 2px solid red;
+
         .navbar {
             color: azure;
+
 
             span {
                 color: azure;
@@ -22,6 +31,10 @@ header {
             padding-top: 0.3125rem;
             padding-bottom: 0.3125rem;
             margin-right: 1rem;
+        }
+
+        .navbar-brand {
+            color: $primary_color;
         }
 
         .cart {

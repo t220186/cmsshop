@@ -7,6 +7,7 @@
     <meta name="theme-color" content="#563d7c">
     <title>@ViewBag.PageTitle</title>
     <link href="~/Template/css/main.css" rel="stylesheet">
+    <link href="~/Content/jquery.fancybox.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -40,8 +41,9 @@
                                     {
                                         <li><a href="/Admin/Dashboard/Index" class="text-white">Panel Administracyjny</a></li>
                                     }
+                                    <li><a href="/Account/Logout" class="text-white">Wyloguj</a></li>
 
-                                }                               
+                                }
                             </ul>
                         </div>
 
@@ -118,7 +120,7 @@
                         <!-- Categories Partial-->
                         @Html.Action("CategoryMenuPartial", "Shop")
                     </div>
-                    <div class="col-md-8 ">
+                    <div class="col-md-10 col-xs-8">
                         <p class="lead">
                             @RenderBody()
                         </p>

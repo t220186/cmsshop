@@ -3,12 +3,12 @@
 
 //vars
 
-$base-nav-link-color: azure;
+@import "vars.scss";
 
 @import"navbar.scss";
 
-body{
-    padding:0;
+body {
+    padding: 0;
 }
 
 //site conteiner
@@ -40,6 +40,7 @@ body{
 }
 
 footer {
+    border-top: solid 3px #ccc;
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
@@ -50,7 +51,47 @@ footer p {
 
 
 ////////////////////////////////////Categories navbar menu////////////////////////////////////////////
-.categories{
+.categories {
+    padding-top: .25rem;
 
+    h3 {
+        font-size: 1rem;
+        color: $primary_textHColor;
+    }
+    //list group
+    .list {
+        position: relative;
+        display: block;
+        padding: 0.75rem 1.25rem;
 
+        a {
+            color: $primary_linksColor;
+        }
+    }
+}
+
+/////product list  product album///////////////////////
+.card {
+
+    img {
+        max-height: 350px;
+    }
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    height: 450px;
+}
+
+.card-body {
+
+    h3 {
+        font-size: 0.75rem;
+    }
 }
