@@ -107,7 +107,19 @@ namespace Cms.Controllers
                 productsViewModel = new ProductsViewModel(dTO);
             }
             //init gallery 
-            productsViewModel.GalleryImages = Directory.EnumerateFiles(Server.MapPath("~/Images/Uploads/Products" + id + "/Gallery/Thumbs")).Select(fn => Path.GetFileName(fn));
+
+            var originDir = new DirectoryInfo(string.Format("{0}Images\\Uploads", Server.MapPath(@"\")));
+            //path string 1
+            var pathString5 = Path.Combine(originDir.ToString(), "Products" + id.ToString() + "\\Gallery\\Thumbs");
+            if (!Directory.Exists(pathString5))            {
+                //create new directory
+                Directory.CreateDirectory(pathString5);
+            }
+           
+                //create new directory
+                productsViewModel.GalleryImages = Directory.EnumerateFiles(Server.MapPath("~/Images/Uploads/Products" + id + "/Gallery/Thumbs")).Select(fn => Path.GetFileName(fn));
+           
+           
             //return ViewModel
             return View(productsViewModel);
         }

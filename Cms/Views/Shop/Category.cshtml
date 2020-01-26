@@ -10,6 +10,7 @@
     <!--TODO  Add new - categories description -->
 </div>
 </hr>
+
 <div class="container">
     <div class="row">
         <div class="col-xs-4 col-md-2">
@@ -20,7 +21,7 @@
             <div class="album py-5 bg-light">
                 @foreach (var item in Model)
                 {
-                    <div class="col-md-4">
+                    <div class="col-md-4 productsOnGrid">
                         <div class="card mb-4 shadow-sm">
                             <img src="/Images/Uploads/Products@(item.Id)/thumbs/@item.ImageName" class="img-responsive" />
 
@@ -30,11 +31,12 @@
                                 <p class="card-text">
                                     <!-- Limit Characters of Html.Raw-->
                                     @Html.Raw(!String.IsNullOrEmpty(item.Description))
+                                    <!-- -->
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <a href="/shop/products/@item.Slug.ToLower()">Zobacz więcej</a>
-                                        <button type="button" class="addToCart btn btn-sm btn-outline-secondary" data-productid="@item.Id">Kup za <h3> @item.Price</h3></button>
+                                        <button type="button" class="addToCart btn btn-sm btn-outline-secondary" data-productid="@item.Id">Kup za <h3> @item.Price zł</h3></button>
                                     </div>                                    
                                 </div>
                             </div>
