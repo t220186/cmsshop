@@ -1,0 +1,47 @@
+﻿//{Navbar
+header {
+
+    .navbar-nav {
+        li {
+            a {
+                color: $base-nav-link-color;
+            }
+        }
+    }
+
+    div.navbar {
+        .navbar {
+            color: azure;
+
+            span {
+                color: azure;
+            }
+        }
+
+        .ajaxCart {
+            padding-top: 0.3125rem;
+            padding-bottom: 0.3125rem;
+            margin-right: 1rem;
+        }
+
+        .cart {
+            img {
+                display: inline-block;
+                width: 1.5em;
+                height: 1.5em;
+                vertical-align: middle;
+                content: "";
+                background: no-repeat center center;
+                background-size: 100% 100%;
+                color: white;
+            }
+
+            border-color: rgba(255, 255, 255, 0.1);
+            display: inline-block;
+            vertical-align: middle;
+            content: "";
+            background: no-repeat center center;
+            background-size: 100% 100%;
+        }
+    }
+}

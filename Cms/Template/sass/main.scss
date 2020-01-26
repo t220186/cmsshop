@@ -1,6 +1,11 @@
 ﻿
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+//vars
+
+$base-nav-link-color: azure;
+
+@import"navbar.scss";
 
 body{
     padding:0;
@@ -44,20 +49,3 @@ footer p {
 }
 
 
-//{Navbar
-
-div.navbar {
-    .navbar {
-        color: azure;
-
-        span {
-            color: azure;
-        }
-    }
-
-    .ajaxCart {
-        padding-top: 0.3125rem;
-        padding-bottom: 0.3125rem;
-        margin-right: 1rem;
-    }
-}

@@ -7138,6 +7138,36 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
+header .navbar-nav li a {
+  color: azure; }
+
+header div.navbar .navbar {
+  color: azure; }
+  header div.navbar .navbar span {
+    color: azure; }
+
+header div.navbar .ajaxCart {
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem; }
+
+header div.navbar .cart {
+  border-color: rgba(255, 255, 255, 0.1);
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%; }
+  header div.navbar .cart img {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat center center;
+    background-size: 100% 100%;
+    color: white; }
+
 body {
   padding: 0; }
 
@@ -7167,13 +7197,3 @@ footer {
 
 footer p {
   margin-bottom: .25rem; }
-
-div.navbar .navbar {
-  color: azure; }
-  div.navbar .navbar span {
-    color: azure; }
-
-div.navbar .ajaxCart {
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-  margin-right: 1rem; }

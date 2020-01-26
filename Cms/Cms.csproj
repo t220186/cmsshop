@@ -1032,6 +1032,7 @@
     <Content Include="Template\front.js" />
     <Content Include="Template\gulpfile.js" />
     <Content Include="Template\node_modules\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="Template\svgicons\shopping_basket-24px.svg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1071,6 +1072,7 @@
     <Content Include="Views\Account\ProfileAccountMenuPartial.cshtml" />
     <Content Include="Views\Account\editAccount.cshtml" />
     <Content Include="Views\Cart\PaypalPartial.cshtml" />
+    <Content Include="Template\sass\navbar.scss" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
