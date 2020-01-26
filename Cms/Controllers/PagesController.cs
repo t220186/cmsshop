@@ -17,6 +17,7 @@ namespace Cms.Controllers
             if (page == "")
             {
                 page = "home";
+                ViewBag.IsHome = "true";
             }
             //set pageViewModel PageDTo
             PageViewModel model;
