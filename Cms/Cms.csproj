@@ -1073,6 +1073,7 @@
     <Content Include="Views\Account\editAccount.cshtml" />
     <Content Include="Views\Cart\PaypalPartial.cshtml" />
     <Content Include="Template\sass\navbar.scss" />
+    <Content Include="Views\Shop\ListAllProductsNew.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />

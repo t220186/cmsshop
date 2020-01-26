@@ -73,6 +73,19 @@ namespace Cms.Controllers
             //return ProductsViewModel List   
             return View(ProductsViewModelList);
         }
+        //list all new products
+        //rozwinąć o paginację !!
+        //GET /Shop/ListAllProductsNew/name
+            public ActionResult ListAllProductsNew(string name)
+        {
+
+            List<ProductsViewModel> productVMList;
+            using (Db db = new Db()) {
+                productVMList = db.Products.ToArray().Select(x => new ProductsViewModel(x)).ToList();
+            }
+
+                return PartialView(productVMList);
+        }
 
         //Product details
         //GET: /Shop/products/{name}

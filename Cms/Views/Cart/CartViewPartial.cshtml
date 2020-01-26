@@ -1,9 +1,5 @@
 ﻿@model Cms.Models.ViewModels.Cart.CartViewModel
 
 <div class="ajaxCart">
-    <span style="display:none">
-        <span>Koszyk:<span class="CartQuantity"> @Model.Quantity </span> / <span class="grandTotalVal">@Model.Price</span>zł</span>
-    </span>
-   
-    <a href="/Cart/Index/" class="btn btn-outline-light my-2 my-sm-0">Koszyk</a>
+    <a href="/Cart/Index/" class="btn btn-outline-light my-2 my-sm-0">Koszyk <span class="CartQuantity" title="produktów"> @Model.Quantity </span> / <span class="grandTotalVal">@Model.Price</span>zł</a>
 </div>
