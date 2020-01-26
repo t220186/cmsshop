@@ -18,31 +18,49 @@
             @Html.Action("CategoryMenuPartial", "Shop")
         </div>
         <div class="col-md-10 col-xs-4 ">
-            <div class="album py-5 bg-light">
-                @foreach (var item in Model)
-                {
-                    <div class="col-md-4 productsOnGrid">
-                        <div class="card mb-4 shadow-sm">
-                            <img src="/Images/Uploads/Products@(item.Id)/thumbs/@item.ImageName" class="img-responsive" />
+            <div class="album py-5 ">
+                <div class="container">
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <img src="/Images/Uploads/Products@(item.Id)/thumbs/@item.ImageName" class="img-thumbnail productList" />
 
-                            <div class="card-body">
-                                <h3>@item.Name</h3>
-                                <hr />
-                                <p class="card-text">
-                                    <!-- Limit Characters of Html.Raw-->
-                                    @Html.Raw(!String.IsNullOrEmpty(item.Description))
-                                    <!-- -->
-                                </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="/shop/products/@item.Slug.ToLower()">Zobacz więcej</a>
-                                        <button type="button" class="addToCart btn btn-sm btn-outline-secondary" data-productid="@item.Id">Kup za <h3> @item.Price zł</h3></button>
-                                    </div>                                    
+                                    <div class="card-body">
+                                        <h3>@item.Name</h3>
+                                        <hr />
+                                        <p class="card-text">
+                                            <!-- Limit Characters of Html.Raw-->
+                                            @if (!String.IsNullOrEmpty(item.Description))
+                                            {//count length
+                                                int maxLength = 1;
+                                                if (item.Description.Length <= 100)
+                                                {
+                                                    maxLength = 5;
+                                                }
+                                                else
+                                                {
+                                                    maxLength = 100;
+                                                }
+
+                                                @Html.Raw(item.Description.Substring(0, maxLength))
+
+
+                                            }... <a href="/shop/products/@item.Slug.ToLower()">Zobacz więcej</a> .
+                                        </p>
+                                        <div class=" d-flex float-right">
+
+                                            <div class="btn-group ">
+                                                <button type="button" class="addToCart btn btn-sm btn-outline-secondary" data-productid="@item.Id">Kup za <h3> @item.Price zł</h3></button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        }
                     </div>
-                }
+                </div>
             </div>
         </div>
     </div>
