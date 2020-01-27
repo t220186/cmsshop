@@ -1,5 +1,6 @@
 ﻿using Cms.Models.Data;
 using Cms.Models.ViewModels.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -307,6 +308,57 @@ namespace Cms.Areas.Admin.Controllers
             TempData["Sm"] = "SideBar został zaktualizowany.";
             return RedirectToAction("Index");
         }
+        //GET  /Admin/Pges/LeadAdvertisement/
+        [HttpGet]
+        public ActionResult LeadAdvertisement() {
+            //getAdvertisementViewModel
+            List<AdvertisementViewModel> advertisementViewModels;
+            //getAll Advertisement and count item in
+            int countItemsIn = 0;
+            using (Db db = new Db()) {               
+                //get All and Count Item in;
+                advertisementViewModels = db.Advertisement.ToArray().OrderBy(x => x.Create).Select(x => new AdvertisementViewModel(x)).ToList();
+                foreach (var counterItem in advertisementViewModels) {
+                    List<AdvertisementItemViewModel> advertisementItemViewModels;
+                    if (!db.AdvertisementItem.Where(x => x.IdAvertisement.Equals(counterItem.Id)).Any())
+                    {
+                        countItemsIn = 0;
+                    }
+                    else
+                    {
+                        advertisementItemViewModels = db.AdvertisementItem.ToArray().Where(x => x.IdAvertisement.Equals(counterItem.Id)).OrderBy(x=>x.Primary).Select(x=>new AdvertisementItemViewModel(x)).ToList();
+                        countItemsIn = advertisementItemViewModels.Count();
+                    }
+                }
+            }
+                return View(advertisementViewModels);
+        }
+        public ActionResult LeadAdvertisementNew() {
+            AdvertisementViewModel model = new AdvertisementViewModel();
+            return View(model);
+        }
 
+        [HttpPost]
+        public ActionResult LeadAdvertisementNew(AdvertisementViewModel model) {
+            if (!ModelState.IsValid) {
+                return View(model);
+            }
+            using (Db db = new Db()) {
+                AdvertisementDTO dTO = new AdvertisementDTO();
+                if (db.Advertisement.Any(x => x.Name.Equals(model.Name)))
+                {
+                    ModelState.AddModelError("","Reklama o podanje nazwie juz istnieje");
+                    model.Name = "";
+                    return View(model);
+                }
+                dTO.Name = model.Name;
+                dTO.Create = DateTime.Now;
+                dTO.Description = model.Description;
+                db.Advertisement.Add(dTO);
+                db.SaveChanges();
+            }
+            TempData["sm"] = "Dodano nową reklamę";
+            return RedirectToAction("LeadAdvertisement");
+        }
     }
 }

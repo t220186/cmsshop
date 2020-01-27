@@ -20,5 +20,10 @@ namespace Cms.Models.Data
         public DbSet<OrderDTO> Orders { get; set; }
 
         public DbSet<OrderDetailsDTO> OrdersDetails { get; set; }
+        //Advertisement
+        public DbSet<AdvertisementDTO> Advertisement { get; set; }
+        //AdvertisementDTO
+        public DbSet<AdvertisementItemDTO> AdvertisementItem { get; set; }
+
     }
 } 
