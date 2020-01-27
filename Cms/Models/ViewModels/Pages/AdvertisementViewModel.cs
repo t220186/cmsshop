@@ -22,14 +22,16 @@ namespace Cms.Models.ViewModels.Pages
         [StringLength(50, MinimumLength = 3)]
         [Display(Name = "Nazwa reklamy")]
         public string Name { get; set; }
+        [StringLength(50, MinimumLength = 3)]
+        [Display(Name = "Data utworzenia")]
         public DateTime Create { get; set; }
+        [StringLength(50, MinimumLength = 3)]
+        [Display(Name = "Ostatnia modyfikacja")]
         public DateTime Update { get; set; }
        
         [StringLength(50, MinimumLength = 3)]
         [Display(Name = "Opis własny - niewymagany")]
         public string Description { get; set; }
-
-
 
     }
 }

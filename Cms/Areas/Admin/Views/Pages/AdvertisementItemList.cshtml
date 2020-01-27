@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Cms.Models.ViewModels.Pages.AdvertisementItemViewModel>
+
+@{
+    ViewBag.Title = "AdvertisementItemList";
+}
+
+<h2>AdvertisementItemList</h2>
+
+
+
+@if (!Model.Any())
+{
+    <h3>Brak elementow do wyświetlenia - dodaj nowy element</h3>
+}
+else
+{
+    <table class="table">
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Primary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Create)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Update)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LeadText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LinkTo)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    <input type="checkbox" name="Primary" value="@item.Primary" data-id="@item.Id" class="form-check" />
+
+                </td>
+                <td>
+                    <input type="image" name="Image" value="" />
+                    <img src="/Images/Uploads/Advertise/@(item.IdAvertisement)/@item.Image" class="img-thumbnail" alt="Alternate Text" />
+
+                </td>
+                <td>
+                    Utworzono/zmodyfikowano:@item.Create / @item.Update
+                </td>
+                <td>
+                    [modalTextPreview]
+                    @Html.DisplayFor(modelItem => item.LeadText)
+                </td>
+                <td>
+                    <!--linkuje do produktu albo nigdzie -->
+                    @Html.DisplayFor(modelItem => item.LinkTo)
+                </td>
+                <td>
+                    <a href="#">Zobacz</a>
+                    <a href="#">Usuń</a>
+
+                </td>
+            </tr>
+        }
+
+    </table>
+
+}

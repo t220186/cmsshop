@@ -10,15 +10,18 @@ namespace Cms.Models.Data
         [Key]
         public int Id { get; set; }
         public int IdAvertisement { get; set; }
-        public bool Primary { get; set; }
+       
         public string Image { get; set; }
         public DateTime Create { get; set; }
         public DateTime Update { get; set; }
         public string LeadText { get; set; }
-        public string LinkTo { get; set; }
+        public int LinkTo { get; set; }
 
         [ForeignKey("IdAvertisement")]
         public virtual AdvertisementDTO Advertisement { get; set; }
+        [ForeignKey("LinkTo")]
+        public virtual ProductsDTO Products { get; set; }
+
     }
 
 

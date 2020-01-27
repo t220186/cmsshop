@@ -1,0 +1,30 @@
+﻿@model Cms.Models.ViewModels.Pages.AdvertisementViewModel
+
+@{
+    ViewBag.Title = "ConfigAdvertisement";
+}
+
+
+<h2>Konfiguracja reklamy</h2>
+
+<p>
+
+    <a href="/Admin/Pages/AddNewAdvertisementItem/1">Dodaj reklamę - element</a>
+   
+</p>
+
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        @Model.Name<span>[edit]</span>
+    </div>
+    <div class="panel-body">
+        @Html.Raw(Model.Description)) <span>[edit]</span>
+    </div>
+</div>
+
+
+@Html.Action("AdvertisementItemList", "Pages", new { id = Model.Id })
+
+

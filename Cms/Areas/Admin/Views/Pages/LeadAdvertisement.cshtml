@@ -7,15 +7,18 @@
 <h2>Nowa rekalma na stronie</h2>
 
 <p>
-    @Html.ActionLink("Dodaj nową", "Create")
+   
+        @Html.ActionLink("Dodaj nową", "LeadAdvertisementNew");
+   
+
 </p>
 @if (!Model.Any())
 {
-    <h3 class="text-center"> Brak Reklam</h3>
+    <h3 class="text-center">Brak Reklam</h3>
 
 
 }
-else
+else 
 {
 
     <table class="table">
@@ -51,9 +54,9 @@ else
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    @Html.ActionLink("Konfiguru", "ConfigAdvertisement", new { id = item.Id }) |
+                   <!-- Ajax request-->
+                    @Html.ActionLink("Delete", "DeleteAdvertisement", new { id = item.Id })
                 </td>
             </tr>
         }

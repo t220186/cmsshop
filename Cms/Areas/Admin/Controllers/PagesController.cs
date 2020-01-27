@@ -2,7 +2,9 @@
 using Cms.Models.ViewModels.Pages;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace Cms.Areas.Admin.Controllers
@@ -310,15 +312,18 @@ namespace Cms.Areas.Admin.Controllers
         }
         //GET  /Admin/Pges/LeadAdvertisement/
         [HttpGet]
-        public ActionResult LeadAdvertisement() {
+        public ActionResult LeadAdvertisement()
+        {
             //getAdvertisementViewModel
             List<AdvertisementViewModel> advertisementViewModels;
             //getAll Advertisement and count item in
             int countItemsIn = 0;
-            using (Db db = new Db()) {               
+            using (Db db = new Db())
+            {
                 //get All and Count Item in;
                 advertisementViewModels = db.Advertisement.ToArray().OrderBy(x => x.Create).Select(x => new AdvertisementViewModel(x)).ToList();
-                foreach (var counterItem in advertisementViewModels) {
+                foreach (var counterItem in advertisementViewModels)
+                {
                     List<AdvertisementItemViewModel> advertisementItemViewModels;
                     if (!db.AdvertisementItem.Where(x => x.IdAvertisement.Equals(counterItem.Id)).Any())
                     {
@@ -326,28 +331,32 @@ namespace Cms.Areas.Admin.Controllers
                     }
                     else
                     {
-                        advertisementItemViewModels = db.AdvertisementItem.ToArray().Where(x => x.IdAvertisement.Equals(counterItem.Id)).OrderBy(x=>x.Primary).Select(x=>new AdvertisementItemViewModel(x)).ToList();
+                        advertisementItemViewModels = db.AdvertisementItem.ToArray().Where(x => x.IdAvertisement.Equals(counterItem.Id)).OrderBy(x => x.Primary).Select(x => new AdvertisementItemViewModel(x)).ToList();
                         countItemsIn = advertisementItemViewModels.Count();
                     }
                 }
             }
-                return View(advertisementViewModels);
+            return View(advertisementViewModels);
         }
-        public ActionResult LeadAdvertisementNew() {
+        public ActionResult LeadAdvertisementNew()
+        {
             AdvertisementViewModel model = new AdvertisementViewModel();
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult LeadAdvertisementNew(AdvertisementViewModel model) {
-            if (!ModelState.IsValid) {
+        public ActionResult LeadAdvertisementNew(AdvertisementViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
                 return View(model);
             }
-            using (Db db = new Db()) {
+            using (Db db = new Db())
+            {
                 AdvertisementDTO dTO = new AdvertisementDTO();
                 if (db.Advertisement.Any(x => x.Name.Equals(model.Name)))
                 {
-                    ModelState.AddModelError("","Reklama o podanje nazwie juz istnieje");
+                    ModelState.AddModelError("", "Reklama o podanje nazwie juz istnieje");
                     model.Name = "";
                     return View(model);
                 }
@@ -359,6 +368,150 @@ namespace Cms.Areas.Admin.Controllers
             }
             TempData["sm"] = "Dodano nową reklamę";
             return RedirectToAction("LeadAdvertisement");
+        }
+
+        //GET /Admin/Pages/ConfigAdvertisement
+        [HttpGet]
+        public ActionResult ConfigAdvertisement(int id)
+        {
+
+            AdvertisementViewModel model;
+
+            //set model
+            using (Db db = new Db())
+            {
+                AdvertisementDTO Dto = db.Advertisement.Find(id);
+                model = new AdvertisementViewModel(Dto);
+            }
+
+            //check list of item exists
+
+
+
+            return View(model);
+        }
+
+        public ActionResult AdvertisementItemList(int id)
+        {
+            List<AdvertisementItemViewModel> advertisementItemViewModels;
+            using (Db db = new Db())
+            {
+                //set List 
+                advertisementItemViewModels = db.AdvertisementItem.ToArray().Where(x => x.IdAvertisement.Equals(id)).Select(x => new AdvertisementItemViewModel(x)).ToList();
+
+
+            }
+            ViewBag.IdAdvert = id;
+            return PartialView(advertisementItemViewModels);
+        }
+        [HttpGet]
+        public ActionResult AddNewAdvertisementItem(int id)
+        {
+            AdvertisementItemViewModel model = new AdvertisementItemViewModel();
+            model.IdAvertisement = id;
+
+            using (Db db = new Db())
+            {
+
+                model.Products = new SelectList(db.Products.ToList(), "Id", "Name");
+
+            }
+
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult AddNewAdvertisementItem(AdvertisementItemViewModel model, HttpPostedFileBase file)
+        {
+            //set valid state
+            if (!ModelState.IsValid)
+            {
+                using (Db db = new Db())
+                {
+
+                    model.Products = new SelectList(db.Products.ToList(), "Id", "Name");
+
+                }
+                return View(model);
+
+            }
+             //  Initialize id
+            int id;
+            //check any others advert has idAdvertisement and Primary
+            using (Db db = new Db())
+            {
+               
+                //Save 
+                AdvertisementItemDTO Dto = new AdvertisementItemDTO();
+                Dto.IdAvertisement = model.IdAvertisement;
+                
+                Dto.LeadText = model.LeadText;
+                Dto.LinkTo = model.LinkTo;
+                Dto.Create = DateTime.Now;
+                Dto.Update = DateTime.Now;
+                //save
+                db.AdvertisementItem.Add(Dto);
+                db.SaveChanges();
+
+                id = Dto.Id;
+            }
+            #region ImageUpload
+
+            //set path
+            var originDir = new DirectoryInfo(string.Format("{0}Images\\Uploads", Server.MapPath(@"\")));
+            var pathString1 = Path.Combine(originDir.ToString(), "Advertise");
+            var pathString2 = Path.Combine(originDir.ToString(), "\\" + model.IdAvertisement.ToString());
+            //check path exists
+            if (!Directory.Exists(pathString1))
+            {
+                //create new directory
+                Directory.CreateDirectory(pathString1);
+            }
+            if (!Directory.Exists(pathString2))
+            {
+                //create new directory
+                Directory.CreateDirectory(pathString2);
+            }
+
+            //add file to path 
+
+            if (file != null && file.ContentLength > 0)
+            {
+                //this is image- file extension
+                string ext = file.ContentType.ToLower();
+                if (ext != "image/jpg" && ext != "image/jpeg" && ext != "image/png" && ext != "image/gif")
+                {
+                    using (Db db = new Db())
+                    {
+
+                        model.Products = new SelectList(db.Products.ToList(), "Id", "Name");
+                        ModelState.AddModelError("", "Obraz nie został przesłany ponieważ jest nieprawidłowe rozszerzenie obrazu");
+                        return View(model);
+                    }
+
+                }
+                string imageName = file.FileName;
+
+                using (Db db = new Db())
+                {
+
+                    AdvertisementItemDTO Dto = db.AdvertisementItem.Find(id);
+                    Dto.Image = imageName;
+                    //updateImage
+                    db.SaveChanges();
+
+
+                }
+                //zapis obrazka na serwerze
+                var path = string.Format("{0}\\{1}", pathString2, imageName);
+                //zapis pliku
+                file.SaveAs(path);
+            }
+
+            //end
+
+            #endregion
+            //return 
+            return RedirectToAction("ConfigAdvertisement", new { id = model.IdAvertisement });
         }
     }
 }
