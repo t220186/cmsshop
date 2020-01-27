@@ -39,7 +39,7 @@ namespace Cms.Controllers
             //set Page Title 
             ViewBag.PageTitle = dTo.Title;
             //set sideBar
-            if(dTo.HasSidebar == true)
+            if (dTo.HasSidebar == true)
             {
                 //get sidebar
                 ViewBag.Sidebar = "1";
@@ -54,7 +54,8 @@ namespace Cms.Controllers
             return View(model);
         }
         //po dodaniu kodu partial, dodać  routing 
-        public ActionResult PagesMenuPartial() {
+        public ActionResult PagesMenuPartial()
+        {
             //declaration Page ViewModel
             List<PageViewModel> pageVMList;
             //set List
@@ -62,7 +63,7 @@ namespace Cms.Controllers
             {
                 //get PageVmList
                 pageVMList = db.Pages.ToArray().OrderBy(x => x.Sorting).Where(x => x.Slug != "home").Select(x => new PageViewModel(x)).ToList();
-                
+
             }
 
             //zwracamy pageViewModelList
@@ -75,11 +76,13 @@ namespace Cms.Controllers
          */
         //GET: /Pages/PagesSideBarPartial
         [HttpGet]
-        public ActionResult PagesSideBarPartial() {
+        public ActionResult PagesSideBarPartial()
+        {
             //init pageSideBarView
             SideBarViewModel pageSideBarView;
             //get sideBar 
-            using (Db db = new Db()) {
+            using (Db db = new Db())
+            {
                 SideBarDTO dTO = db.SideBar.Find(1);
                 //set SideBarViewModel
                 pageSideBarView = new SideBarViewModel(dTO);
@@ -87,18 +90,17 @@ namespace Cms.Controllers
             }
             //return model view model
             return PartialView(pageSideBarView);
-                
-                }
-    } 
-    //Products
 
-    //basket
+        }
+        public ActionResult CaruselPartial()
+        {
+            //init AdvertisementList
+            List<AdvertisementViewModel> advertisementViewModels = new List<AdvertisementViewModel>();
+            //
 
+            return PartialView(advertisementViewModels);
+        }
 
-    //register  User
-
-    //send registration and basket email
-
-    //set payu paypal pay method
+    }
 
 }

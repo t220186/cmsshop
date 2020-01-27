@@ -27,7 +27,6 @@ namespace Cms.Models.ViewModels.Pages
         [StringLength(50, MinimumLength = 3)]
         [Display(Name = "Obraz/Reklama główna")]
       
-        [Display(Name = "Zdjęcie")]
         public string Image { get; set; }
         [Display(Name = "Utworzono")]
         public DateTime Create { get; set; }

@@ -331,7 +331,7 @@ namespace Cms.Areas.Admin.Controllers
                     }
                     else
                     {
-                        advertisementItemViewModels = db.AdvertisementItem.ToArray().Where(x => x.IdAvertisement.Equals(counterItem.Id)).OrderBy(x => x.Primary).Select(x => new AdvertisementItemViewModel(x)).ToList();
+                        advertisementItemViewModels = db.AdvertisementItem.ToArray().Where(x => x.IdAvertisement.Equals(counterItem.Id)).OrderBy(x => x.Create).Select(x => new AdvertisementItemViewModel(x)).ToList();
                         countItemsIn = advertisementItemViewModels.Count();
                     }
                 }
@@ -451,7 +451,6 @@ namespace Cms.Areas.Admin.Controllers
                 //save
                 db.AdvertisementItem.Add(Dto);
                 db.SaveChanges();
-
                 id = Dto.Id;
             }
             #region ImageUpload
@@ -459,7 +458,8 @@ namespace Cms.Areas.Admin.Controllers
             //set path
             var originDir = new DirectoryInfo(string.Format("{0}Images\\Uploads", Server.MapPath(@"\")));
             var pathString1 = Path.Combine(originDir.ToString(), "Advertise");
-            var pathString2 = Path.Combine(originDir.ToString(), "\\" + model.IdAvertisement.ToString());
+         
+            var pathString2 = Path.Combine(originDir.ToString(), "Advertise\\" + model.IdAvertisement.ToString() + "\\");
             //check path exists
             if (!Directory.Exists(pathString1))
             {

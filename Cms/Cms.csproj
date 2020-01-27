@@ -1084,6 +1084,7 @@
     <Content Include="Template\sass\navbar.scss" />
     <Content Include="Views\Shop\ListAllProductsNew.cshtml" />
     <Content Include="Template\sass\vars.scss" />
+    <Content Include="Views\Pages\CaruselPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
