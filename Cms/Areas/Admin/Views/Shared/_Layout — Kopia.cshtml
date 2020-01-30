@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Obszar administracyjny</title>
+    <link href="/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="/Content/css/PagedList.css" rel="stylesheet" />
+    <link href="/Content/css/Site.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    
+
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("CmsShop", "Index", "Dashboard", new { area = "Admin" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                  
+                    <li class="dropdown">
+                     
+                        <a href="/Admin/Pages/Index" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Strony <span class="caret"></span>
+                        
+                        </a>
+              
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Dodaj nową </a></li>
+                            <li><a href="#">Dodaj Nawigację</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/Admin/Pages/LeadAdvertisement">Reklama</a></li>
+                            <li><a href="/Admin/Pages/LeadAdvertisementNew">Dodaj nową reklamę</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Pasek boczny", "EditSidebar", "Pages")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Kategorie", "Categories", "Shop")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Produkty", "Products", "Shop")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Zamówienia", "Orders", "Shop")
+                    </li>
+                </ul>
+                <ul class="nav navbar-right">
+                    <li>
+                        @Html.ActionLink("Strona sklepu", "Index", "Pages", new { area = "" }, new { @target = "_blank" })
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+
+        <footer>
+            <p>&copy; @DateTime.Now.Year</p>
+        </footer>
+    </div>
+
+    <script src="/Scripts/jquery-3.3.1.js"></script>
+    <script src="/Scripts/jquery-ui-1.12.1.js"></script>
+    <script src="/Scripts/dropzone/dropzone.js"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+    <script src="/Scripts/Shop/scripts.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
