@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace Cms.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AllowHtmlBinder : IModelBinder
     {
         public object BindModel(ControllerContext controllerContext,

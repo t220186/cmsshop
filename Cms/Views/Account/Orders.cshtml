@@ -19,7 +19,7 @@ else
                 @Html.DisplayNameFor(model => model.Total)
             </th>
             <th>
-               Podsumowanie zamówienia
+                Podsumowanie zamówienia
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CreatedD)
@@ -30,31 +30,29 @@ else
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrdersNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Total) zł
-              
-            </td>
-            <td>
-               
-                <!-- foreach slownik -->
-                @foreach (var itemProductsAndQuantity in item.ProductsAndQuantity)
-                {
-                    @itemProductsAndQuantity.Key @:x @itemProductsAndQuantity.Value <br />
-                }
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedD)
-            </td>
-            <td>
-             
-                @Html.ActionLink("Szczegóły", "Details", new { /* id=item.PrimaryKey */ }) 
-             
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrdersNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total) zł
+
+                </td>
+                <td>
+
+                    <!-- foreach slownik -->
+                    @foreach (var itemProductsAndQuantity in item.ProductsAndQuantity)
+                    {
+                        @itemProductsAndQuantity.Key @:x @itemProductsAndQuantity.Value <br />
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedD)
+                </td>
+                <td>
+                    @Html.ActionLink("Szczegóły", "Details", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
         }
     </tbody>
 </table>

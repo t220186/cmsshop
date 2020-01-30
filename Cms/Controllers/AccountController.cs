@@ -239,6 +239,7 @@ namespace Cms.Controllers
 
         ///Partrial View Dla AccountMenu
         ///
+        [Authorize]
         public ActionResult ProfileAccountMenuPartial()
         {
 
@@ -262,7 +263,7 @@ namespace Cms.Controllers
           
             return PartialView(model);
         }
-
+        [Authorize]
         public ActionResult Logout()
         {
             bool IsAuthenticated = User.Identity.IsAuthenticated;
@@ -275,6 +276,7 @@ namespace Cms.Controllers
             return Redirect("~/");
         }
         //GET: /account/orders
+        [Authorize(Roles="Default")]
         public ActionResult Orders() {
             //init view Model 
             List<OrdersForUserViewModel> ordersForUser = new List<OrdersForUserViewModel>();
