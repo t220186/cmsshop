@@ -11,10 +11,8 @@
 }
 else
 {
-
-
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Dodaj nowe zamówienie", "CreateNewOrder")
 </p>
 <table class="table">
     <tr>
@@ -43,6 +41,13 @@ else
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Total)
+            <!-- foreach slownik -->
+            @foreach(var itemProductsAndQuantity in item.ProductsAndQuantity)
+            {
+                @itemProductsAndQuantity.Key @:x @itemProductsAndQuantity.Value <br/>
+            }
+
+
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CreatedD)

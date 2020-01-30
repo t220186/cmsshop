@@ -4,59 +4,88 @@
     ViewBag.Title = "ProfileAccount";
 }
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>UserProfileViewModel</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.FirstName)
-           
-                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
-            
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.LastName)
-            
-                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
-           
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email)
-           
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            
-        </div>
-
-       
 
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Password)
-            <input type="password" class="form-control" autocomplete="off" name="Password" placeholder="Password">
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.ConfirmPassword)
-            <input type="password" class="form-control" name="ConfirmPassword" placeholder="Password">
-        </div>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profil @Model.FirstName @Model.LastName</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#ship" role="tab" aria-controls="profile" aria-selected="false">Adres dostawy</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#mails" role="tab" aria-controls="profile" aria-selected="false">Zgłoszenia</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#orders" role="tab" aria-controls="profile" aria-selected="false">Zamówienia</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
 
-      
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Id)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FirstName)
+
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.LastName)
+
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email)
+
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Password)
+                    <input type="password" class="form-control" autocomplete="off" name="Password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ConfirmPassword)
+                    <input type="password" class="form-control" name="ConfirmPassword" placeholder="Password">
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Zapisz" class="btn btn-default" />
+                    </div>
+                </div>
             </div>
-        </div>
+        }
+
+
+
     </div>
-}
+    <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="profile-tab">
+
+        @Html.Action("Orders", "Account")
+
+    </div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+</div>

@@ -1,5 +1,6 @@
 ﻿using Cms.Models;
 using Cms.Models.Data;
+using Cms.Models.ViewModels.Shop;
 using Cms.Models.ViewModels.Users;
 using System;
 using System.Collections.Generic;
@@ -273,8 +274,57 @@ namespace Cms.Controllers
             TempData["sm"] = "Poprawnie wylogowano";
             return Redirect("~/");
         }
+        //GET: /account/orders
+        public ActionResult Orders() {
+            //init view Model 
+            List<OrdersForUserViewModel> ordersForUser = new List<OrdersForUserViewModel>();
+            using (Db db = new Db())
+            {
+                //pobierz userId            
+                UsersDTO user = db.Users.Where(x => x.Email.Equals(User.Identity.Name)).FirstOrDefault();
+                int userId = user.Id;
+                //zamowienia dla uzytkownika 
+                //towrzymy listę zamowien / zamowienia/ pobieramy z tabeli /gdzie warunkiem jest id (w tym przypadku id uzytkownika)/ do Tablicy / pobieramy towrzac nowy ViewModel zamowienia
+                List<OrderViewModel> orders = db.Orders.Where(x => userId.Equals(userId)).ToArray().Select(x => new OrderViewModel(x)).ToList();
+                ///iteracja po wszystkich zamowieniach 
+                foreach (var order in orders)
+                {
+                    ///inicjalizacja slownika
+                    ///
+                    Dictionary<string, int> ProductsAndQty = new Dictionary<string, int>();
+                    //total
+                    decimal total = 0m;
+                    //szczegoly zamowienia 
+                    List<OrderDetailsDTO> orderDetailsDTO = db.OrdersDetails.Where(x => x.OrderId.Equals(order.OrderId)).ToList();
+                    ///foreach - iteracja po poszczególnych szczegółach zamówienia
+                    ///
+                    foreach(var orderDetailsItem in orderDetailsDTO)
+                    {
+                        ProductsDTO productsDTO = db.Products.Where(x => x.Id.Equals(orderDetailsItem.ProductId)).FirstOrDefault();
+                        //pobierz cena
+                        decimal price = productsDTO.Price;
+                        string productName = productsDTO.Name;
+                        //add products to dictionary
+                        ProductsAndQty.Add(productName,orderDetailsItem.Quantity);
+                        // suma total
+                        total += orderDetailsItem.Quantity * price;
 
 
+                    }
+                    //set list ordersForUser 
+                    ordersForUser.Add(new OrdersForUserViewModel()
+                    {
+                        //set new List view Model
+                        OrdersNumber = order.OrderId,
+                        Total = total,
+                        ProductsAndQuantity = ProductsAndQty,
+                        CreatedD = order.CreatedD,
+                    }) ;
+                }
+            }
+            //partial view
+            return PartialView(ordersForUser);
+        }
         /**
          * 
          */

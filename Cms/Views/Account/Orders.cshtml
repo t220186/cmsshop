@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Cms.Models.ViewModels.Users.OrdersForUserViewModel>
+
+@if (!Model.Any())
+{
+    <h3>Brak zamówień</h3>
+}
+else
+{
+
+
+}
+<table class="table  table-borderless table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrdersNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>
+               Podsumowanie zamówienia
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedD)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrdersNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total) zł
+              
+            </td>
+            <td>
+               
+                <!-- foreach slownik -->
+                @foreach (var itemProductsAndQuantity in item.ProductsAndQuantity)
+                {
+                    @itemProductsAndQuantity.Key @:x @itemProductsAndQuantity.Value <br />
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedD)
+            </td>
+            <td>
+             
+                @Html.ActionLink("Szczegóły", "Details", new { /* id=item.PrimaryKey */ }) 
+             
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
