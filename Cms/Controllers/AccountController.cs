@@ -310,8 +310,6 @@ namespace Cms.Controllers
                         ProductsAndQty.Add(productName,orderDetailsItem.Quantity);
                         // suma total
                         total += orderDetailsItem.Quantity * price;
-
-
                     }
                     //set list ordersForUser 
                     ordersForUser.Add(new OrdersForUserViewModel()
